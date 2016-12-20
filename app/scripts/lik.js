@@ -1,4 +1,4 @@
-angular.module('likDir', [])
+angular.module('lik', [])
 	.directive('lik', function() {
 		return {
 			restrict: 'ECMA',

@@ -1,5 +1,5 @@
 angular
-  .module('yeomanApp', []).controller('wcg_ju',['$scope',function($scope){
+  .module('wcg', []).controller('wcg_ju',['$scope',function($scope){
 	$scope.wcg_arr_1=[{id:0,arr:[0]}]
     
 	$scope.sex0 = function(a,b){

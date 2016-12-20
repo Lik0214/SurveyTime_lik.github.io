@@ -19,9 +19,14 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'likDir'
-  ])
-	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    'lik',
+    'wcg',
+    'gyr'
+  ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+		$stateProvider.state('nav', {
+			url: '/nav',
+			templateUrl: 'views/nav.html'
+		})
 		$stateProvider.state('demo', {
 			url: '/demo',
 			views: {
@@ -30,4 +35,5 @@ angular
 				}
 			}
 		})
+		$urlRouterProvider.when('','nav')
 	}]);
