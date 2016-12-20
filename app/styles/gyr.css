@@ -1,0 +1,22 @@
+.list{
+	width: 100%;
+	height: 3rem;
+	border-bottom: 0.025rem solid #ccc;
+	line-height: 3rem;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;	
+}
+.list>p>a{
+	-webkit-box-flex: 1;
+	font-size: 0.6rem;
+	color: #4D4D4D;
+}
+.list a>span{
+	display:block;
+	width: 1rem;
+	font-size:.85rem;
+	color:#222828;
+	line-height:3rem;
+	margin-right: 0.5rem;
+}
+
