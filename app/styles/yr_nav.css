@@ -1,0 +1,94 @@
+*{margin: 0;padding: 0;}
+.box{
+	width: 14rem;
+	margin: 0 auto;
+}
+.yr_nav{
+	height: 2.5rem;
+	background: #222828;
+	line-height: 2.5rem;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;	
+}
+.yr_logo{
+	-webkit-box-flex: 2;
+	font-size: 0.8rem;
+	
+}
+.yr_logo a{
+	color: #fff;
+	margin-left: .5rem;
+}
+.yr_username{
+	-webkit-box-flex: 3;
+}
+.yr_username p{
+	font-family: "微软雅黑";
+	color: #fff;
+	margin-left: 5rem;
+	font-size: .75rem;
+}
+.yr_fa{
+	width: 100%;
+	overflow: hidden;
+}
+.yr_content{
+	width: 300%;
+	-background: red;
+}
+.yr_content>div{
+	width: calc(100%/3);
+	-background: red;
+	float: left;
+}
+.yr_content .list{
+	height: 3rem;
+	border-bottom: 0.025rem solid #ccc;
+	line-height: 3rem;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;	
+}
+.yr_content .list p{
+	-webkit-box-flex: 1;
+	font-size: 0.6rem;
+	margin-left: .5rem;
+}
+.yr_content .list p a{
+	color: #4D4D4D;
+}
+.yr_content .list>a{
+	display:block;
+}
+.yr_content .list>a p{
+	font-size:.85rem;
+	color:#222828;
+	line-height:3rem;
+	margin-right: 0.5rem;
+}
+.yr_footer{
+	width: 100%;
+	height: 3rem;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;	
+	-background: #222828;
+	border-top: 0.025rem solid #ccc;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+.yr_footer .yr_pkq{
+	-webkit-box-flex: 1;
+	text-align: center;
+}
+.yr_footer .yr_pkq span{
+	color: #222828;
+	font-size: 1.25rem;
+	margin-top: 0.4rem;
+	margin-bottom: 0.3rem;
+}
+.yr_footer .yr_pkq p{
+	font-size:.6rem ;
+	color: #222828;
+	font-family: "微软雅黑";
+	
+}
