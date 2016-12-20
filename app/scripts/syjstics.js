@@ -1,4 +1,4 @@
-angular.module('yeomanApp',["chart.js"]).directive("view",function(){
+angular.module('yeomanApp',["chart.js"]).directive("song",function(){
 	return {
 		restrict:"ECMA",
 		templateUrl:"views/statistics.html",
