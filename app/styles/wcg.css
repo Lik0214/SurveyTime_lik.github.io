@@ -1,0 +1,34 @@
+
+*{
+	font-family: "微软雅黑";
+}
+
+.wcg_show{
+	
+	height:0;
+	overflow: hidden;
+}
+.wcg_show_yes{
+	display: block;
+}
+.wcg_tianja{
+	width:4rem;
+	height:4rem;
+	border:1px solid #CCCCCC;
+	text-align: center;
+	color: #CCCCCC;
+	line-height: 4rem;
+	border-radius: 8px;
+}
+.wcg_zhu{
+	
+	margin: 0 10px;
+}
+.wcg_xun{
+	border-bottom: 1px solid #3AB1FF;
+	padding:10px 0;
+	margin: 10px 0;
+}
+.badge{
+	color:#CCCCCC;
+}
