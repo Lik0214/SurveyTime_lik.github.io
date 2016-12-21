@@ -21,7 +21,8 @@ angular
     'ui.router',
     'lik',
     'wcg',
-    'gyr'
+    'gyr',
+    'syj'
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('nav', {
 			url: '/nav',
