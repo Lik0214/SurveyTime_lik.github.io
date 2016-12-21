@@ -17,5 +17,23 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ]);
+    'ngTouch',
+    'ui.router',
+    'lik',
+    'wcg',
+    'gyr'
+  ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+		$stateProvider.state('nav', {
+			url: '/nav',
+			templateUrl: 'views/nav.html'
+		})
+		$stateProvider.state('demo', {
+			url: '/demo',
+			views: {
+				main: {
+					templateUrl: 'views/demo.html'
+				}
+			}
+		})
+		$urlRouterProvider.when('','nav')
+	}]);

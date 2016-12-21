@@ -1,4 +1,4 @@
-angular.module('yeomanApp',['ui.router'])
+angular.module('gyr',['ui.router'])
  .directive('view', function(){
  	return {
  		restrict:'ECMA',
