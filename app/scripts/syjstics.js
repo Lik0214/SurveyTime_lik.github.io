@@ -1,15 +1,4 @@
-angular.module('syj',["chart.js"]).directive("song",function(){
-	return {
-		restrict:"ECMA",
-		templateUrl:"views/statistics.html",
-		//template:"<div>wo shi ling yi ge ye mian</div>",
-		scope:true,
-		replace:true,
-		link:function(s,e,a){
-			
-		}
-	}
-}).controller("syjCtrl", ["$scope",function ($scope) {
+angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope",function ($scope) {
   $scope.asd = ["body", "girl", "不男不女"];
   $scope.datas = [300, 500, 100];
   $scope.qwe = ["body", "girl", "不男不女"];

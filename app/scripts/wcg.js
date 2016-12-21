@@ -77,6 +77,7 @@ angular
   .directive('wcg', function(){
   	return {
   		restrict:'ECMA',
+  		replace:true,
   		templateUrl:'views/quesTmp.html'
   	}
   })
