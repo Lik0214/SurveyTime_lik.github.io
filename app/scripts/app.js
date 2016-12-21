@@ -23,11 +23,11 @@ angular
     'wcg',
     'gyr'
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-		$stateProvider.state('nav', {
-			url: '/nav',
-			templateUrl: 'views/nav.html'
+		$stateProvider.state('pro', {
+			url: '/pro',
+			templateUrl: 'views/production.html'
 		})
-		$stateProvider.state('demo', {
+		$stateProvider.state('pro.demo', {
 			url: '/demo',
 			views: {
 				main: {
@@ -35,5 +35,5 @@ angular
 				}
 			}
 		})
-		$urlRouterProvider.when('','nav')
+		$urlRouterProvider.when('','pro')
 	}]);

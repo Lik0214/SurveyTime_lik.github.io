@@ -1,8 +1,8 @@
 angular.module('lik', [])
-	.directive('lik', function() {
+	/*.directive('lik', function() {
 		return {
 			restrict: 'ECMA',
 			templateUrl: 'views/production.html',
 			replace: true
 		}
-	})
+	})*/
