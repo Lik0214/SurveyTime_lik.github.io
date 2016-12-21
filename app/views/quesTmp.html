@@ -1,23 +1,24 @@
 <div ng-controller="wcg_ju" class="wcg_zhu">
+	  <input type="text" placeholder="请输入调查的主题" style="width:100%;margin-top:10px;text-align: center;" class="form-control" ng-model="wcg_chaun[0].title">
      <div ng-repeat="a in wcg_arr_1" class="wcg_xun">
     		<h4 style="color:#3AB1FF;">问题{{$index+1}}</h4>
      	请输入问题：  <span style="float: right;" ng-click="dians($index)" class="badge">X</span><br>
-     	<input type="text" placeholder="请输入问题" style="width:100%;" class="form-control"><br>
+     	<input type="text" placeholder="请输入问题" style="width:100%;" class="form-control" ng-model="wcg_chaun[0].option[$index].title"><br>
       <div id="no{{$index}}" >
       	<div class="wcg_show">
       		<textarea style="width:100%;height:100px;resize:none" class="form-control"></textarea>
       	</div>
       	<div class="wcg_show">
       		<span ng-repeat="b in wcg_arr_1[$index].arr" >
-      			<span>单选框  {{$index+1}}</span><input type="text" class="form-control">
-      			<b ng-click="dians2($index,$parent.$index)" style="float:right;color:#D84C29">删除</b><br>
+      			<span>单选框  {{$index+1}}</span><input type="text" class="form-control" id="inputSuccess2" ng-model="wcg_chaun[0].option[$parent.$index].opt[$index].op">
+      			<b ng-click="dians2($index,$parent.$index)" style="float:right;color:#D84C29">删除</b><br>    		     
       		</span>
       		<br>
       		<button ng-click="btn2($index)" class="btn btn-info">添加</button>
       	</div>
         <div class="wcg_show">
         	<span ng-repeat="d in wcg_arr_1[$index].arr" >
-        		<span>多选框  {{$index+1}}</span><input type="text" class="form-control">
+        		<span>多选框  {{$index+1}}</span><input type="text" class="form-control" ng-model="wcg_chaun[0].option[$parent.$index].opt[$index].op">
         		<b ng-click="dians3($index,$parent.$index)" style="float:right;color:#D84C29">删除</b><br>
         	</span>
         	<br>
@@ -29,10 +30,11 @@
        
       </div>
      	选择问题类型：<br>
-     	<input type="radio" name="sex1{{$index}}" value="0" ng-click="sex0('no'+$index,0)"/> 回答
-     	<input type="radio" name="sex1{{$index}}" value="1" ng-click="sex1('no'+$index,1)"/> 单选
-     	<input type="radio" name="sex1{{$index}}" value="2" ng-click="sex2('no'+$index,2)"/> 多选
-     	<input type="radio" name="sex1{{$index}}" value="3" ng-click="sex3('no'+$index,3)"/> 简答
+     	<input type="radio" name="sex1{{$index}}" value="0" ng-click="sex0('no'+$index,0,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 回答
+     	<input type="radio" name="sex1{{$index}}" value="1" ng-click="sex1('no'+$index,1,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 单选
+     	<input type="radio" name="sex1{{$index}}" value="2" ng-click="sex2('no'+$index,2,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 多选
+     	<input type="radio" name="sex1{{$index}}" value="3" ng-click="sex3('no'+$index,3,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 简答
      </div>
       <div ng-click="btn()" class="wcg_tianja"><i class="glyphicon glyphicon-plus"></i></div>
+      <div class="btn btn-primary" style="width: 100%;margin-top:10px;">完成</div>
 </div>
