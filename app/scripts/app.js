@@ -22,7 +22,11 @@ angular
     'lik',
     'wcg',
     'gyr',
+<<<<<<< HEAD
     'py'
+=======
+    'syj'
+>>>>>>> origin/master
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('login', {
 			url: '/login',
