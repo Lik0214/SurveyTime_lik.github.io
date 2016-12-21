@@ -21,11 +21,16 @@ angular
     'ui.router',
     'lik',
     'wcg',
-    'gyr'
+    'gyr',
+    'py',
+    'syj'
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('pro', {
 			url: '/pro',
 			templateUrl: 'views/production.html'
+		$stateProvider.state('login', {
+			url: '/login',
+			templateUrl: 'views/login.html'
 		})
 		$stateProvider.state('pro.demo', {
 			url: '/demo',
@@ -36,4 +41,13 @@ angular
 			}
 		})
 		$urlRouterProvider.when('','pro')
+		$stateProvider.state('nav', {
+			url: '/nav',
+			views: {
+				main: {
+					templateUrl: 'views/nav.html'
+				}
+			}
+		})
+		$urlRouterProvider.when('','login')
 	}]);
