@@ -1,28 +1,29 @@
-window.onload = function(){
+
+$(function(){
 //	注册,登录切换
-	var Ozhuce = document.querySelector('#y_zhuce');
+	/*var Ozhuce = document.querySelector('#y_zhuce');
 	var Odeng =document.querySelector('#y_deng');
 	var Oleft = document.querySelector('.y_nav_center_left');
-	var Oright =document.querySelector('.y_nav_center_right');
-	Ozhuce.onclick = function(){
-		Oright.style.left = "100%";
-		Oleft.style.left = 0;
-		Ozhuce.className = 'active';
-		Odeng.className = '';
-	}
-	Odeng.onclick = function(){
-		Oleft.style.left = '100%';
-		Oright.style.left = 0;
-		Odeng.className = 'active';
-		Ozhuce.className = '';
-	}
+	var Oright =document.querySelector('.y_nav_center_right');*/
+	$('#y_zhuce').on('click',function(){
+		$('#y_nav_center_right').css('left','100%');
+		$('#y_nav_center_left').css('left',0);
+		$('#y_zhuce').className = 'active';
+		$('#y_deng').className = '';
+	})
+	$('#y_deng').on('click',function(){
+		$('#y_nav_center_left').css('left','100%');
+		$('#y_nav_center_right').css('left',0);
+		$('#y_deng').className = 'active';
+		$('#y_zhuce').className = '';
+	})
 //验证码	
 	var code ; //在全局定义验证码   
 	 
 	createCode();
-	document.getElementById("change").onclick=function(){
+	$("#change").click(function(){
 		createCode();
-	};
+	});
 //	document.getElementById("btn").onclick=function(){
 //		validate();
 //	};
@@ -30,14 +31,14 @@ window.onload = function(){
 	function createCode(){  
 	     code = "";   
 	     var codeLength = 4;//验证码的长度  
-	     var checkCode = document.getElementById("code");   
+//	     var checkCode = document.getElementById("code");   
 	     var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',  
 	     'S','T','U','V','W','X','Y','Z');//随机数  
 	     for(var i = 0; i < codeLength; i++) {//循环操作  
 	        var index = Math.floor(Math.random()*36);//取得随机数的索引（0~35）  
 	        code += random[index];//根据索引取得随机数加到code上  
 	    }  
-	    checkCode.innerHTML = code;//把code值赋给验证码  
+	    $('#code').html(code);//把code值赋给验证码  
 	}  
 	//校验验证码  
 	function validate(){  
@@ -55,7 +56,7 @@ window.onload = function(){
 	    }             
 	} 
 	//登录ajax
-	var Oy_zcan = document.querySelector('#y_zcan');
+	/*var Oy_zcan = document.querySelector('#y_zcan');
 	var Oy_dlan = document.querySelector('#y_dlan');
 //	var Oy_nav_center_left = document.querySelector('#y_nav_center_left');
 //	var Oy_nav_center_right = document.querySelector('#y_nav_center_right');
@@ -74,6 +75,6 @@ window.onload = function(){
 		}else{
 			
 		}
-	}
+	}*/
 	
-}
+})

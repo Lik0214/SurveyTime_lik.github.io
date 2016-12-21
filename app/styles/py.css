@@ -58,7 +58,7 @@ input{
 	height: 2.2rem;
 	margin: 0 0.5rem;
 }
-.y_nav_top>span{
+.y_nav_top>div{
 	display: block;
 	width: 50%;
 	height: 2.2rem;
@@ -67,7 +67,7 @@ input{
 	line-height: 2.2rem;
 	color: #fff;
 }
-.y_nav_top>span.active{
+.y_nav_top>div.active{
 	border-bottom: 1px solid #8d8aff;
 }
 /*注册*/
