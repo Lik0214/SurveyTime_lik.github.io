@@ -115,6 +115,7 @@ input{
 	line-height: 1.75rem;
 	font-size: 0.7rem;
 	color: #fff;
+	border-radius: .4rem;
 }
 /*登录*/
 .y_nav_center_right{
@@ -168,14 +169,13 @@ input{
 	color: #fff;
 }
 .y_nav_mtop>#code{
-	width: 2.3rem;
 	float: left;
 	border-radius: 8px;
 	background: rgba(0,0,0,0.4);
-	border-radius: 8px;
 	color: #fff;
 	margin-left: 0.3rem;
-	padding: 0 0.2rem;
+	padding: 0 0.4rem;
+	
 }
 .y_nav_mtop>#btn{
 	margin-left: 0.3rem;
