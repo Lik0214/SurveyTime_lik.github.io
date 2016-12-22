@@ -1,8 +1,6 @@
-angular.module('py', []).controller("pyan",["$scope","$http",function($scope,$http){
+angular.module('py', []).controller("pyan",["$scope","$http","$location", function($scope,$http,$location){
 	
-	$scope.fn = function(){
-		$location.path('nav')
-	}
+	
 	$('#y_zhuce').click(function() {
 				$('#y_nav_center_right').css('left', '100%');
 				$('#y_nav_center_left').css('left', 0);
@@ -25,6 +23,7 @@ angular.module('py', []).controller("pyan",["$scope","$http",function($scope,$ht
 			//		validate();
 			//	};
 			//产生验证码 
+			var code1;
 			function createCode() {
 				code1 = "";
 				var codeLength = 4; //验证码的长度  
@@ -128,7 +127,7 @@ angular.module('py', []).controller("pyan",["$scope","$http",function($scope,$ht
 					method:"post",
 					data:$scope.updata
 				}).then(function(e){
-					console.log(e)
+					$location.path('nav')
 				},function(){
 					$scope.y_background = 'y_background1';
 					$scope.borrow="用户名密码不一致 !";
