@@ -14,6 +14,10 @@ angular
   }]
   //四个问题类型
 	$scope.sex0 = function(a,b,c){
+  .module('wcg', []).controller('wcg_ju',['$scope',function($scope){
+	$scope.wcg_arr_1=[{id:0,arr:[0]}]
+    
+	$scope.sex0 = function(a,b){
 //      alert(a)
 		var ax = document.getElementById(a)
 		var adiv = ax.getElementsByTagName('div')
@@ -185,6 +189,7 @@ angular
   .directive('wcg', function(){
   	return {
   		restrict:'ECMA',
+  		replace:true,
   		templateUrl:'views/quesTmp.html'
   	}
   })

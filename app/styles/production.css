@@ -1,0 +1,53 @@
+html, body{
+	width:100%;
+	height:100%;
+}
+.ng-scope{
+	height:100%;
+}
+.lik_wrap{
+	width:100%;
+	height:100%;
+	background:#E3E9E9;
+	box-sizing:border-box;
+	padding-top:1.6rem;
+}
+.lik_wrap .lik_info{
+	width:80%;
+	overflow: hidden;
+	background:#E3E9E9;
+	border:2px solid #fff;
+	border-radius:8px;
+	padding:1rem 0;
+	box-shadow:0 0 10px 7px #C5D3DA inset;
+	margin:0 auto;
+}
+.lik_wrap .lik_info h1{
+	font-size:24px;
+	line-height:120%;
+	text-align: center;
+}
+.lik_wrap .lik_info p{
+	text-indent:2em;
+	width:90%;
+	margin:0 auto;
+	line-height:160%;
+	margin-top:.5rem;
+	font-family:"宋体";
+	font-size:.7rem;
+	letter-spacing: 1px;
+}
+.lik_wrap a.goOn{
+	display: block;
+	width:80%;
+	height:2rem;
+	
+	text-align:center;
+	line-height:2rem;
+	font-size:.9rem;
+	border-radius:6px;
+	color:#3C3C3C;
+	margin:2rem auto 0;
+	background-color: #F2F4F3;
+	border:1px solid #3C3C3C;
+}

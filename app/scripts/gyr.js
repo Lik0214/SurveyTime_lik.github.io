@@ -7,6 +7,7 @@ angular.module('yeomanApp',['ui.router'])
  	}
  	
  })
+angular.module('gyr',['ui.router'])
 .directive('list2', function(){
  	return {
  		restrict:'ECMA',
@@ -15,3 +16,11 @@ angular.module('yeomanApp',['ui.router'])
  	}
  	
  })
+ }).controller('yr',['$scope','$location', function($scope,$location){
+ 	$scope.go=function(){
+ 		$location.path('nav')
+ 	}
+ 	$scope.add= function(){
+ 		$location.path('nav/add')
+ 	}
+ }])
