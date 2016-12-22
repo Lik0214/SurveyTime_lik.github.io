@@ -1,13 +1,12 @@
-angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope",function ($scope) {
+angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http",function ($scope,$http) {
+
   $scope.asd = ["body", "girl", "不男不女"];
   $scope.datas = [300, 500, 100];
   $scope.qwe = ["body", "girl", "不男不女"];
   $scope.dataa = [300, 500, 100];
+}]).service("getData",["$http",function(){
+	
 }]);
-
-
-
-
 
 
 
