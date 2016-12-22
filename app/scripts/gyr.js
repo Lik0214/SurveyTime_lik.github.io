@@ -1,12 +1,4 @@
 angular.module('gyr',['ui.router'])
- .directive('view', function(){
- 	return {
- 		restrict:'ECMA',
-	 	replace:true,
-	 	templateUrl:'views/nav.html'
- 	}
- 	
- })
 .directive('list2', function(){
  	return {
  		restrict:'ECMA',
@@ -14,4 +6,11 @@ angular.module('gyr',['ui.router'])
 	 	templateUrl:'views/list.html'
  	}
  	
- })
+ }).controller('yr',['$scope','$location', function($scope,$location){
+ 	$scope.go=function(){
+ 		$location.path('nav')
+ 	}
+ 	$scope.add= function(){
+ 		$location.path('nav/add')
+ 	}
+ }])

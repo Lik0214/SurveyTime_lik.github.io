@@ -2,6 +2,9 @@ html, body{
 	width:100%;
 	height:100%;
 }
+.ng-scope{
+	height:100%;
+}
 .lik_wrap{
 	width:100%;
 	height:100%;
