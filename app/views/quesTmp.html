@@ -1,10 +1,14 @@
 <div ng-controller="wcg_ju" class="wcg_zhu">
+	
 	  <input type="text" placeholder="请输入调查的主题" style="width:100%;margin-top:10px;text-align: center;" class="form-control" ng-model="wcg_chaun[0].title">
+     <input ng-model="wcg_title" style="border: none; background: none; color: red;"></input>
      <div ng-repeat="a in wcg_arr_1" class="wcg_xun">
     		<h4 style="color:#3AB1FF;">问题{{$index+1}}</h4>
-     	请输入问题：  <span style="float: right;" ng-click="dians($index)" class="badge">X</span><br>
+     	请输入问题：<span style="color: red;">{{a.da1}}</span>  <span style="float: right;" ng-click="dians($index)" class="badge">X</span><br>
      	<input type="text" placeholder="请输入问题" style="width:100%;" class="form-control" ng-model="wcg_chaun[0].option[$index].title"><br>
+       <!--<div>{{}}</div>-->
       <div id="no{{$index}}" >
+      	<span style="color: red;">{{a.da3}}</span>
       	<div class="wcg_show">
       		<textarea style="width:100%;height:100px;resize:none" class="form-control"></textarea>
       	</div>
@@ -29,12 +33,13 @@
         </div>
        
       </div>
-     	选择问题类型：<br>
+     	选择问题类型：<span style="color: red;">{{a.da2}}</span><br>
      	<input type="radio" name="sex1{{$index}}" value="0" ng-click="sex0('no'+$index,0,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 回答
      	<input type="radio" name="sex1{{$index}}" value="1" ng-click="sex1('no'+$index,1,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 单选
      	<input type="radio" name="sex1{{$index}}" value="2" ng-click="sex2('no'+$index,2,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 多选
      	<input type="radio" name="sex1{{$index}}" value="3" ng-click="sex3('no'+$index,3,$index)" ng-model="wcg_chaun[0].option[$index].type"/> 简答
      </div>
       <div ng-click="btn()" class="wcg_tianja"><i class="glyphicon glyphicon-plus"></i></div>
-      <div class="btn btn-primary" style="width: 100%;margin-top:10px;">完成</div>
+      <div class="btn btn-primary" style="width: 100%;margin-top:10px;" ng-click="wcg_over()">完成</div>
+   
 </div>
