@@ -1,4 +1,4 @@
-<div class="y_box">
+<div class="y_box" ng-controller="pyan">
 	<div class="y_logo">
 		<div class="y_logo_bot">
 
@@ -9,46 +9,50 @@
 			<div class="active" id="y_zhuce">注册</div>
 			<div id="y_deng">登录</div>
 		</div>
+		<!--//注册-->
 		<div class="y_nav_center_left" id="y_nav_center_left">
 			<div>
 				<span class="icon-user"></span>
-				<input type="text" placeholder="请输入手机号" />
+				<input type="text" placeholder="请输入手机号" ng-model="data.username"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="icon-lock"></span>
-				<input type="text" placeholder="请输入密码" />
+				<input type="password" placeholder="请输入密码" ng-model="data.password"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="icon-lock"></span>
-				<input type="text" placeholder="请重新输入密码" />
+				<input type="password" placeholder="请重新输入密码" ng-model="data.word"/>
 			</div>
 			<span class="y_denglu">
-				<a href="javascript:;" id="y_zcan">注册</a>
+				<p id="y_zcan" ng-click="signin()">注册</p>
 			</span>
 		</div>
+		<!--//登录-->
 		<div class="y_nav_center_right" id="y_nav_center_right">
 			<div>
 				<span class="icon-user"></span>
-				<input type="text" placeholder="请输入手机号" id="y_dl_phone"/>
+				<input type="text" placeholder="请输入手机号" ng-model="updata.username" id="y_dl_phone"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="icon-lock"></span>
-				<input type="text" placeholder="请输入密码" id="y_dl_pass"/>
+				<input type="password" placeholder="请输入密码" ng-model="updata.password" id="y_dl_pass"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="icon-lock"></span>
-				<input type="text" id="input" />
+				<input type="text" id="input" ng-model="security" />
 				<div id="code"></div>
 				<div id="change">看不清，换一张</div>
 			</div>
 			<span class="y_denglu">
-				<a href="javascript:;" id="y_dlan" ng-click='fn()'>登录</a>
+				<p id="y_dlan" ng-click="login()">登录</p>
 			</span>
 		</div>
 	</div>
-	<!--<div class="y_background">
+	<div class="y_background" ng-class="y_background">
+		<div class="y_kuang">
+			{{borrow}}
+			<div ng-click="close()">确定</div>
+		</div>
 	</div>
-	<div class="y_kuang">
-		
-	</div>-->
+	
 </div>
