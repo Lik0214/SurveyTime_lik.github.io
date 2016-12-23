@@ -4,6 +4,9 @@
 	margin: 0 auto;
 }
 .yr_nav{
+	height: 2.5rem;
+	background: #222828;
+	line-height: 2.5rem;
 	width:100%;
 	height: 2.5rem;
 	background: #222828;
