@@ -41,11 +41,11 @@
 	margin-top:2.5rem;
 }
 .yr_content{
-	width: 300%;
+	width:100%;
 	-background: red;
 }
 .yr_content>div{
-	width: calc(100%/3);
+	width: 100%;
 	-background: red;
 	float: left;
 }
