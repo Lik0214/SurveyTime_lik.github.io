@@ -1,7 +1,7 @@
 angular.module('py', []).controller("pyan",["$scope","$http","$location", function($scope,$http,$location){
 	
 	
-	$('#y_zhuce').click(function() {
+			$('#y_zhuce').click(function() {
 				$('#y_nav_center_right').css('left', '100%');
 				$('#y_nav_center_left').css('left', 0);
 				$('#y_zhuce').addClass('active');
@@ -12,7 +12,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 				$('#y_nav_center_right').css('left', 0);
 				$('#y_deng').addClass('active');
 				$('#y_zhuce').removeClass('active');
-			});
+			});	
 			var code; //在全局定义验证码   
 
 			createCode();
@@ -83,7 +83,8 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 				method:"post",
 				data:$scope.data
 			}).then(function(e){
-				console.log(e)
+//				console.log(e)
+				$location.path('nav');
 			},function(){
 				$scope.y_background = 'y_background1';
 				$scope.close = function(){
@@ -95,7 +96,22 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 		}
 	}
 //	登录
+	$scope.check = false;
 	$scope.updata={};
+	//	获取cookie函数
+	function getcookie(objname){
+		var str = document.cookie.split("; ");
+		for(var i = 0;i < str.length;i ++){
+			var arr = str[i].split("=");
+		if(arr[0] == objname) return unescape(arr[1]);
+		}
+	}
+	//获取username
+	var cookuser = getcookie('username')
+	//如果有则填写
+	if(cookuser){
+		$scope.updata.username=cookuser
+	}
 	$scope.login = function(){
 		if($scope.updata.username == '' || $scope.updata.username == null){
 			$scope.y_background = 'y_background1';
@@ -129,12 +145,21 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 					method:"post",
 					data:$scope.updata
 				}).then(function(e){
+					if($scope.check==true){
+						function setCookie(cookie_name,value,Path,timeout){
+							var date = new Date();
+							date.setDate(date.getDate()+timeout)
+							document.cookie = cookie_name+"="+escape(value)+";path"+"="+Path+
+							';expires='+date.toGMTString()
+						}
+						setCookie('username',$scope.updata.username,'/',7)
+					}
 					window.localStorage.uid=e.data.uid;
 					window.localStorage.username=e.config.data.username;
 					$location.path('nav');
 				},function(){
 					$scope.y_background = 'y_background1';
-					$scope.borrow="用户名密码不一致 !";
+					$scope.borrow="用户名和密码不一致 !";
 					$scope.close = function(){
 						$scope.y_background = 'y_background';
 					}

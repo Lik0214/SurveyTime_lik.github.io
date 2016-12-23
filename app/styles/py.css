@@ -38,12 +38,13 @@ input{
 	width: 4.25rem;
 	height: 4.25rem;
 	overflow: hidden;
-	left: 40%;
+	left: 38.5%;
 	border-radius: 50%;
 	position: absolute;
 	margin-top: 2rem;
 	background: url(../images/y_logo.png) center no-repeat;
 	background-size: 4.25rem;
+	border: 1px solid #8c88ff;
 }
 .y_nav{
 	min-height: 15rem;
@@ -233,6 +234,14 @@ input{
 	display: block;
 }
 .y_nav_mtop_cook{
-	margin-top: 0.2rem;
-	background: pink;
+	display: block;
+	margin-top: 0.7rem;
+	padding: 0 0.5rem;
+	color: #fff;
+	line-height: 1rem;
+}
+.y_nav_mtop_cook>input{
+	float: left;
+	margin-left: 0.3rem;
+	margin-right: 0.3rem;
 }
