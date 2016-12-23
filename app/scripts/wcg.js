@@ -1,6 +1,5 @@
 angular
   .module('wcg', []).controller('wcg_ju',['$scope',function($scope){
-
 	$scope.wcg_arr_1=[{id:0,arr:[0],da1:'',da2:'',da3:''}]
   $scope.wcg_chaun=[{
   	            'option':[{
