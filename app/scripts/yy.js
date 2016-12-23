@@ -110,12 +110,14 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 				$scope.y_background = 'y_background';
 			}
 		}else if($scope.security == '' || $scope.security == null){
+			createCode();
 			$scope.y_background = 'y_background1';
 			$scope.borrow="请输入验证码!";
 			$scope.close = function(){
 				$scope.y_background = 'y_background';
 			}
 		}else if($scope.security != code1){
+			createCode();
 			$scope.y_background = 'y_background1';
 			$scope.borrow="请输入正确的验证码!";
 			$scope.close = function(){
@@ -127,7 +129,9 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 					method:"post",
 					data:$scope.updata
 				}).then(function(e){
-					$location.path('nav')
+					window.localStorage.uid=e.data.uid;
+					window.localStorage.username=e.config.data.username;
+					$location.path('nav');
 				},function(){
 					$scope.y_background = 'y_background1';
 					$scope.borrow="用户名密码不一致 !";
@@ -135,14 +139,6 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 						$scope.y_background = 'y_background';
 					}
 				});
-//			console.log($scope.updata)
-//			$http({
-//					url:"http://47.90.20.200:1602/users/login",
-//					method:"post",
-//					data:$scope.updata
-//				}).then(function(e){
-//					console.log(e)
-//				});
 		}
 	}
 	
