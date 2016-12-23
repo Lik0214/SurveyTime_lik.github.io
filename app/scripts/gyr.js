@@ -6,11 +6,15 @@ angular.module('gyr',['ui.router'])
 	 	templateUrl:'views/list.html'
  	}
  	
- }).controller('yr',['$scope','$location', function($scope,$location){
+}).controller('yr',['$scope','$location', function($scope,$location){
  	$scope.go=function(){
  		$location.path('nav')
  	}
  	$scope.add= function(){
  		$location.path('nav/add')
  	}
+ 	$scope.mine= function(){
+ 		$location.path('mine')
+ 	}
+ 	$scope.username = window.localStorage.username
  }])

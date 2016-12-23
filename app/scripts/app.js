@@ -23,7 +23,8 @@ angular
     'wcg',
     'gyr',
     'py',
-    'syj'
+    'syj',
+    'gyrmine'
   ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('login', {
 			url: '/login',
@@ -33,8 +34,13 @@ angular
 			url: '/nav',
 			templateUrl: 'views/nav.html'
 		})
+		$stateProvider.state('mine', {
+			url: '/mine',
+			templateUrl: 'views/mine.html'
+		})
 		$stateProvider.state('nav.add', {
 			url: '/add',
+			
 			views: {
 				content: {
 					templateUrl: 'views/questions.html'
