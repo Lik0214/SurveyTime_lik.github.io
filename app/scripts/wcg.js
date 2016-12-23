@@ -1,5 +1,5 @@
 angular
-  .module('wcg', []).controller('wcg_ju',['$scope',function($scope){
+  .module('wcg', []).controller('wcg_ju',['$scope','$http',function($scope,$http){
 	$scope.wcg_arr_1=[{id:0,arr:[0],da1:'',da2:'',da3:''}]
   $scope.wcg_chaun=[{
   	            'option':[{
@@ -8,9 +8,8 @@ angular
   	            	'type':'',
   	            	'oop':""
   	            }],
-  	            'uid':'',
+  	            'uid':window.localStorage.uid,
   	            'title':''
-  
   }]
   //四个问题类型
 	$scope.sex0 = function(a,b,c){
@@ -125,6 +124,7 @@ angular
    	}
 
    }
+   
    $scope.wcg_yesanno = false
    $scope.wcg_title = ''
    $scope.wcg_xinz =[]
@@ -178,7 +178,15 @@ angular
    	}
    	
    	 if($scope.wcg_yesanno == true){
-   	 	alert('成功')
+   	    $http({
+   	    	method:'post',
+		      url:'http://47.90.20.200:1602/item',
+		      data:JSON.stringify($scope.wcg_chaun[0])
+   	    }).then(function(e){
+           window.localStorage.wcg_id = e.data.id             
+       
+   	    },function(){})
+   	    
    	 }
    }
   }])
