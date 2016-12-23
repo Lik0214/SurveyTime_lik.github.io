@@ -38,3 +38,24 @@
 	color:#fff;
 	line-height:2rem;
 }
+.r_content{
+	height: 2.5rem;
+	border-bottom: 0.025rem solid #ccc;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+.r_content>p:nth-child(1){
+	-webkit-box-flex: 1;
+	line-height: 2.5rem;
+	font-size: .75rem;
+	font-family: "微软雅黑";
+}
+.r_content>p:nth-child(2){
+	font-size: .75rem;
+	line-height: 2.5rem;
+}
+.exit{
+	position: fixed;
+	left:0;
+	bottom: 4.5rem;
+}
