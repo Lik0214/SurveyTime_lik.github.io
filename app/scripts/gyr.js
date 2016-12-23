@@ -6,7 +6,7 @@ angular.module('gyr',['ui.router'])
 	 	templateUrl:'views/list.html'
  	}
  	
- }).controller('yr',['$scope','$location', function($scope,$location){
+}).controller('yr',['$scope','$location', function($scope,$location){
  	$scope.go=function(){
  		$location.path('nav')
  	}

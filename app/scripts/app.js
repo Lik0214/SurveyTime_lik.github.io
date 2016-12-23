@@ -35,6 +35,7 @@ angular
 		})
 		$stateProvider.state('nav.add', {
 			url: '/add',
+			
 			views: {
 				content: {
 					templateUrl: 'views/questions.html'
