@@ -13,4 +13,8 @@ angular.module('gyr',['ui.router'])
  	$scope.add= function(){
  		$location.path('nav/add')
  	}
+ 	$scope.mine= function(){
+ 		$location.path('mine')
+ 	}
+ 	$scope.username = window.localStorage.username
  }])

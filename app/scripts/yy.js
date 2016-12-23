@@ -156,6 +156,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 					}
 					window.localStorage.uid=e.data.uid;
 					window.localStorage.username=e.config.data.username;
+					window.localStorage.password=e.config.data.password;
 					$location.path('nav');
 				},function(){
 					$scope.y_background = 'y_background1';
