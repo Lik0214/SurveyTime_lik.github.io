@@ -1,20 +1,17 @@
 <div ui-view="main" ng-controller="yr">
-	<div class="yr_nav">
-		<div class="yr_logo">
-			<a href="javascript:;">SurveyTime</a>
-		</div>
-		<div class="yr_username">
-			<p>欢迎：<span class="name">{{username}}</span></p>
-		</div>
-	</div>
-	<div class="yr_fa">
-		<div class="yr_content">
-			<div list2 ui-view="content"></div>
-			<!--<div ui-view="main4" list2>
 
-            </div>
-            <div>2</div>
-            <div>3</div>-->
+    <div class="yr_nav" style="z-index: 1551;">
+        <div class="yr_logo">
+            <a href="javascript:;">SurveyTime</a>
+        </div>
+        <div class="yr_username">
+            <p>欢迎：{{username}}</p>
+        </div>
+    </div>
+    <div class="yr_fa">
+        <div class="yr_content">
+            <div list2 ui-view="content"></div>
+
 		</div>
 	</div>
 	<div class="yr_footer">
