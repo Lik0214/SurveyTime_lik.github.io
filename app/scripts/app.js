@@ -55,29 +55,20 @@ angular
 				}
 			}
 		})
-		$stateProvider.state('nav.share', {
+		$stateProvider.state('share', {
 			url: '/share',
-			views: {
-				main: {
-					templateUrl: 'views/production.html'
-				}
-			}
+			templateUrl: 'views/production.html'
 		})
-		$stateProvider.state('nav.share.demo', {
-			url: '/demo',
+		$stateProvider.state('share.servey', {
+			url: '/servey',
 			views: {
 				produc: {
-					templateUrl: 'views/demo.html'
+					templateUrl: 'views/servey.html'
 				}
 			}
 		})
-		/*$stateProvider.state('nav.list', {
-			url: '/list',
-			views: {
-				content: {
-					templateUrl: 'views/list.html'
-				}
-			}
-		})*/
 		$urlRouterProvider.when('','login')
-	}]);
+	}])
+  .controller('rootCtrl', ['$rootScope', function($rootScope){
+  	$rootScope.server = 'http://47.90.20.200:1602/'
+  }]);

@@ -1,8 +1,17 @@
 angular.module('lik', [])
-	/*.directive('lik', function() {
-		return {
-			restrict: 'ECMA',
-			templateUrl: 'views/production.html',
-			replace: true
+	.controller('likCtrl', ['$rootScope', '$scope', '$location', '$http', function($rootScope, $scope, $location, $http) {
+		$scope.goBack = function() {
+			$location.path('nav')
 		}
-	})*/
+//		$scope.uid = window.localStorage.uid;
+		$http({
+			method: 'get',
+			url: $rootScope.server + 'item',
+			params:{uid:window.localStorage.uid}
+		}).then(function(e) {
+			console.log(e)
+			$scope.likTitle = e.title
+			console.log(e.data)
+			$scope.likData = e.data
+		}, function() {})
+	}])

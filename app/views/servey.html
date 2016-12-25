@@ -1,0 +1,9 @@
+<div class="lik_survey">
+    <h1>{{likTitle}}</h1>
+    <div class="lik_survey_question" ng-repeat="x in likData" quesType="{{x.option[0].type}}">
+        <div class="lik_ques_head">
+            <div class="lik_num">{{$index+1}}</div>
+            <div class="lik_ques">{{x.title}}</div>
+        </div>
+    </div>
+</div>

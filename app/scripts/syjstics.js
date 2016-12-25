@@ -1,4 +1,4 @@
-angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getData",function ($scope,$http,getData) {
+angular.module('syj',["chart.js"]).controller("syjCtrl", ["$rootScope", "$scope","$http","getData",function ($rootScope, $scope,$http,getData) {
 
   /*$scope.asd = ["body", "girl", "不男不女"];
   $scope.datas = [300, 500, 100];
@@ -6,7 +6,7 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
   $scope.dataa = [300, 500, 100];*/
   //$scope.server="http://47.90.20.200:1602/item";
   $scope.coo = window.localStorage.uid;
-  getData.post("http://47.90.20.200:1602/item",{uid:$scope.coo},function(respose){
+  getData.post($rootScope.server+"item",{uid:$scope.coo},function(respose){
   	$scope.fruit=respose.data;
   	console.log($scope.fruit)
   })
