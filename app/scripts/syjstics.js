@@ -14,32 +14,23 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
 	console.log($scope.fruit[0].option[0].opt);
 	console.log($scope.fruit[0].option[0].opt[0]);
 	console.log($scope.fruit[0].option[0].opt[0].op);*/
+	$scope._num=[1,1,1,1];
+	$scope._op=[];
 	for(i in $scope.fruit){
-		// console.log($scope.fruit[i])
+		console.log($scope.fruit[i])
+		$scope.asd=$scope.fruit[i];
 		for(j in $scope.fruit[i].option){
 			//console.log($scope.fruit[i].option[j])
+			$scope.das=$scope.fruit[i].option[j];
+			//console.log($scope.das)
 			for(k in $scope.fruit[i].option[j].opt){
-				//console.log($scope.fruit[i].option[j].opt[k])
+				console.log($scope.fruit[i].option[j].opt[k])
+				//$scope._num.push($scope.fruit[i].option[j].opt[k].num);
+				$scope._op.push($scope.fruit[i].option[j].opt[k].op);
 			}
 		}
 	}
-	/*angular.forEach($scope.fruit,function(data,index,array){
-		console.log(data.a+'='+array[index].a);
-	})*/
-	/*scope.asd = ["body", "girl", "不男不女"];
-	$scope.datas = [300, 500, 100];
-	$scope.qwe = ["body", "girl", "不男不女"];
-	$scope.dataa = [300, 500, 100];*/
   })
-
-	/*$http({
-  		url:$scope.server,
-     	method:"get"
-  	}).then(function(e){
-  		$scope.json2=e.data;
-  		console.log($scope.json2)
-  	},function(){});*/
-
 }]).service("getData",["$http",function($http){
 	return{
 		get:function(url,callbk){
