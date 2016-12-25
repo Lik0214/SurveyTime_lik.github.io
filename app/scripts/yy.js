@@ -1,4 +1,4 @@
-angular.module('py', []).controller("pyan",["$scope","$http","$location", function($scope,$http,$location){
+angular.module('py', []).controller("pyan",["$rootScope","$scope","$http","$location", function($rootScope,$scope,$http,$location){
 	
 	
 	$('#y_zhuce').click(function() {
@@ -79,7 +79,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 			}
 		}else{
 			$http({
-				url:"http://47.90.20.200:1602/users",
+				url:$rootScope.server+"users",
 				method:"post",
 				data:$scope.data
 			}).then(function(e){
@@ -125,7 +125,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 			}
 		}else{
 			$http({
-					url:"http://47.90.20.200:1602/users/login",
+					url:$rootScope.server+"users/login",
 					method:"post",
 					data:$scope.updata
 				}).then(function(e){

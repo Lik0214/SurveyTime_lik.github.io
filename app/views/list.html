@@ -1,7 +1,7 @@
 <div>
 	<div class="list" ng-repeat="a in gyr_arr">
 			<p><a ui-sref=".sta">{{a.title}}</a></p>
-		<a ui-sref=".share">
+		<a ng-click="goOn()" ui-sref=".share">
 			<span class="icon-share2"></span>
 		</a>
 		<a href="javascript:;">
