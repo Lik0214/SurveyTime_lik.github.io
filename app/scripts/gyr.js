@@ -10,6 +10,9 @@ angular.module('gyr',['ui.router'])
  	$scope.go=function(){
  		$location.path('nav')
  	}
+ 	$scope.goOn = function(){
+ 		$location.path('share')
+ 	}
  	$scope.add= function(){
  		$location.path('nav/add')
  	}
