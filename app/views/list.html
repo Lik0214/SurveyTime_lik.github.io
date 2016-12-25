@@ -1,11 +1,11 @@
 <div>
 	<div class="list" ng-repeat="a in gyr_arr">
 			<p><a ui-sref=".sta">{{a.title}}</a></p>
-		<a ng-click="goOn()" ui-sref=".share">
+		<a ng-click="goOn()">
 			<span class="glyphicon glyphicon-share"></span>
 		</a>
-		<a href="javascript:;">
-			<span class="glyphicon glyphicon-remove" ng-click="remove(a.id)"></span>
+		<a href="javascript:;" ng-click="remove(a.id)">
+			<span class="glyphicon glyphicon-remove"></span>
 		</a>
 	</div>
 </div>
