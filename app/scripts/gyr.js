@@ -6,7 +6,7 @@ angular.module('gyr',['ui.router'])
 	 	templateUrl:'views/list.html'
  	}
  	
-}).controller('yr',['$scope','$location', function($scope,$location){
+}).controller('yr',['$rootScope','$scope','$location','$http', function($rootScope,$scope,$location,$http){
  	$scope.go=function(){
  		$location.path('nav')
  	}
@@ -17,4 +17,13 @@ angular.module('gyr',['ui.router'])
  		$location.path('mine')
  	}
  	$scope.username = window.localStorage.username
+ 	$http({
+				url:$rootScope.server+"item?uid="+window.localStorage.uid,
+				method:"get"
+			}).then(function(e){
+				console.log(e)
+			},function(){
+				
+			});
+
  }])
