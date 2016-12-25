@@ -21,12 +21,22 @@ angular.module('gyr',['ui.router'])
  	}
  	$scope.username = window.localStorage.username
  	$http({
-				url:$rootScope.server+"item?uid="+window.localStorage.uid,
+			url:"http://47.90.20.200:1602/item?uid="+window.localStorage.uid,
 				method:"get"
 			}).then(function(e){
+				$scope.gyr_arr = e.data
 				console.log(e)
 			},function(){
 				
 			});
-
+    $scope.remove = function(id){
+    	$http({
+    		url:'http://47.90.20.200:1602/item?id='+id,
+			method:'delete'
+    	}).then(function(e){
+				console.log(e)
+			},function(){
+				
+			});
+    }
  }])
