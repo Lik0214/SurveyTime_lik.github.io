@@ -24,7 +24,7 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
 			$scope.das=$scope.fruit[i].option[j];
 			//console.log($scope.das)
 			for(k in $scope.fruit[i].option[j].opt){
-				console.log($scope.fruit[i].option[j].opt[k])
+				//console.log($scope.fruit[i].option[j].opt[k])
 				//$scope._num.push($scope.fruit[i].option[j].opt[k].num);
 				$scope._op.push($scope.fruit[i].option[j].opt[k].op);
 			}
