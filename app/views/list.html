@@ -1,11 +1,11 @@
 <div>
-	<div class="list">
-			<p><a ui-sref=".sta">问卷一</a></p>
+	<div class="list" ng-repeat="a in gyr_arr">
+			<p><a ui-sref=".sta">{{a.title}}</a></p>
 		<a ui-sref=".share">
 			<span class="icon-share2"></span>
 		</a>
 		<a href="javascript:;">
-			<span class="icon-cross"></span>
+			<span class="icon-cross" ng-click="remove(a.id)"></span>
 		</a>
 	</div>
 </div>
