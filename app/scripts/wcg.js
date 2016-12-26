@@ -1,5 +1,5 @@
 angular
-	.module('wcg', []).controller('wcg_ju', ['$scope', '$http', function($scope, $http) {
+	.module('wcg', []).controller('wcg_ju', ['$rootScope','$scope', '$http', function($rootScope,$scope, $http) {
 		$scope.wcg_arr_1 = [{
 			id: 0,
 			arr: [0],
@@ -208,7 +208,7 @@ angular
 			if($scope.wcg_yesanno == true) {
 				$http({
 					method: 'post',
-					url: 'http://47.90.20.200:1602/item',
+					url: $rootScope.server+'item',
 					data: JSON.stringify($scope.wcg_chaun[0])
 				}).then(function(e) {
 					window.localStorage.wcg_id = e.data.id
