@@ -6,7 +6,7 @@
             <div class="lik_ques">{{x.title}}</div>
         </div>
         <div ng-show="x.type == 1" class="lik_ques_cont likradio{{$parent.$parent.$index}}" ng-repeat="l in x.opt">
-            <div class="lik_ques_opt"><input type="radio" name="{{$parent.$parent.$index}}" />{{l.op}}</div>
+            <div class="lik_ques_opt"><input type="radio" name="{{$parent.$index}}" />{{l.op}}</div>
         </div>
         <div ng-show="x.type == 2" class="lik_ques_cont" ng-repeat="l in x.opt">
             <div class="lik_ques_opt"><input type="checkbox" name="{{$parent.$parent.$index}}" />{{l.op}}</div>
