@@ -9,5 +9,8 @@ angular.module('gyrmine',['ui.router'])
  	$scope.mine= function(){
  		$location.path('mine')
  	}
+ 	$scope.exit = function(){
+ 		$location.path('login')
+ 	}
  	$scope.username = window.localStorage.username
  }])

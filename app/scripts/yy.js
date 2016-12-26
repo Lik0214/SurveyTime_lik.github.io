@@ -1,5 +1,7 @@
-angular.module('py', []).controller("pyan",["$scope","$http","$location", function($scope,$http,$location){
-			$('#y_zhuce').click(function() {
+angular.module('py', []).controller("pyan",["$rootScope","$scope","$http","$location", function($rootScope,$scope,$http,$location){
+	
+	
+	$('#y_zhuce').click(function() {
 				$('#y_nav_center_right').css('left', '100%');
 				$('#y_nav_center_left').css('left', 0);
 				$('#y_zhuce').addClass('active');
@@ -27,7 +29,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 				var codeLength = 4; //验证码的长度  
 				//	     var checkCode = document.getElementById("code");   
 				var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-					'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数  
+					'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z','a','b'); //随机数  
 				for(var i = 0; i < codeLength; i++) { //循环操作  
 					var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）  
 					code1 += random[index]; //根据索引取得随机数加到code上  
@@ -50,7 +52,6 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 	
 //	注册
 	$scope.data = {};
-	
 	$scope.signin = function(){
 		if($scope.data.username == '' || $scope.data.username == null){
 			$scope.y_background = 'y_background1';
@@ -78,7 +79,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 			}
 		}else{
 			$http({
-				url:"http://47.90.20.200:1602/users",
+				url:$rootScope.server+"users",
 				method:"post",
 				data:$scope.data
 			}).then(function(e){
@@ -124,6 +125,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 			$scope.borrow="请输入正确的登录账号!";
 			$scope.close = function(){
 				$scope.y_background = 'y_background';
+				$scope.deng = 'kkk';
 			}
 		}else if($scope.updata.password == '' || $scope.updata.password == null){
 			createCode();
@@ -148,7 +150,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 			}
 		}else{
 			$http({
-					url:"http://47.90.20.200:1602/users/login",
+					url:$rootScope.server+"users/login",
 					method:"post",
 					data:$scope.updata
 				}).then(function(e){
@@ -176,11 +178,6 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 				});
 		}
 	}
-	
-	
-	
-	
-	
 	
 	
 }])
