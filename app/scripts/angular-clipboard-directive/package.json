@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "angular-clipboard-directive",
+      "D:\\20161.12\\item\\m"
+    ]
+  ],
+  "_from": "angular-clipboard-directive@latest",
+  "_id": "angular-clipboard-directive@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-clipboard-directive",
+  "_nodeVersion": "6.3.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/angular-clipboard-directive-1.0.0.tgz_1481595547323_0.1399684625212103"
+  },
+  "_npmUser": {
+    "email": "supermanchc@gmail.com",
+    "name": "superman66"
+  },
+  "_npmVersion": "3.10.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-clipboard-directive",
+    "raw": "angular-clipboard-directive",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-clipboard-directive/-/angular-clipboard-directive-1.0.0.tgz",
+  "_shasum": "f377ae45d5be38d9c806bc8bd958179ea16ffc74",
+  "_shrinkwrap": null,
+  "_spec": "angular-clipboard-directive",
+  "_where": "D:\\20161.12\\item\\m",
+  "author": {
+    "name": "superman"
+  },
+  "bugs": {
+    "url": "https://github.com/superman66/angular-clipboard/issues"
+  },
+  "dependencies": {
+    "angular": "^1.5.6",
+    "clipboard": "^1.5.10"
+  },
+  "description": "angular-clipboard directive using clipboard.js that without using flash",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "f377ae45d5be38d9c806bc8bd958179ea16ffc74",
+    "tarball": "https://registry.npmjs.org/angular-clipboard-directive/-/angular-clipboard-directive-1.0.0.tgz"
+  },
+  "gitHead": "297c9fae137b27a8513c8f985e72274e6c6f5387",
+  "homepage": "https://github.com/superman66/angular-clipboard#readme",
+  "license": "ISC",
+  "main": "angular-clipboard.js",
+  "maintainers": [
+    {
+      "email": "supermanchc@gmail.com",
+      "name": "superman66"
+    }
+  ],
+  "name": "angular-clipboard-directive",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superman66/angular-clipboard.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

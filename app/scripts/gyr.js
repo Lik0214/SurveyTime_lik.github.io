@@ -1,4 +1,4 @@
-angular.module('gyr', ['ui.router'])
+angular.module('gyr', ['ui.router','angular-clipboard'])
 	.directive('list2', function() {
 		return {
 			restrict: 'ECMA',
@@ -14,6 +14,11 @@ angular.module('gyr', ['ui.router'])
 		$scope.goOn = function(id) {
 			window.localStorage.id=$scope.gyr_arr[id].id
 			$location.path('share')
+		$scope.goOn = function(a) {
+			$scope.gyr_id = a
+			$scope.gyr_luyou = 'ddadad?id='+$scope.gyr_id
+			console.log(a)
+//			gyr_xinas.style.display = 'block'
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id=$scope.gyr_arr[id].id
@@ -48,4 +53,11 @@ angular.module('gyr', ['ui.router'])
 			}
 
 		}
+		
+		new Clipboard('.btn', {
+            text: function(trigger) {
+    	alert('复制成功')
+        return trigger.getAttribute('aria-label');
+    }
+});
 	}])
