@@ -1,6 +1,6 @@
 <div>
 	<div class="list" ng-repeat="a in gyr_arr">
-			<p><a ui-sref=".sta">{{a.title}}</a></p>
+			<p><a ng-click="goSta($index)" ui-sref=".sta">{{a.title}}</a></p>
 		<a ng-click="goOn()">
 			<span class="glyphicon glyphicon-share"></span>
 		</a>

@@ -11,8 +11,12 @@ angular.module('gyr', ['ui.router'])
 			$location.path('nav')
 			window.location.reload()
 		}
-		$scope.goOn = function() {
+		$scope.goOn = function(id) {
+			window.localStorage.id=$scope.gyr_arr[id].id
 			$location.path('share')
+		}
+		$scope.goSta = function(id) {
+			window.localStorage.id=$scope.gyr_arr[id].id
 		}
 		$scope.add = function() {
 			$location.path('nav/add')
