@@ -1,6 +1,4 @@
 angular.module('py', []).controller("pyan",["$scope","$http","$location", function($scope,$http,$location){
-	
-	
 			$('#y_zhuce').click(function() {
 				$('#y_nav_center_right').css('left', '100%');
 				$('#y_nav_center_left').css('left', 0);
@@ -52,10 +50,11 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 	
 //	注册
 	$scope.data = {};
+	
 	$scope.signin = function(){
 		if($scope.data.username == '' || $scope.data.username == null){
 			$scope.y_background = 'y_background1';
-			$scope.borrow="请输入账号!";
+			$scope.borrow="请输入正确账号!";
 			$scope.close = function(){
 				$scope.y_background = 'y_background';
 			}
@@ -84,7 +83,11 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 				data:$scope.data
 			}).then(function(e){
 //				console.log(e)
-				$location.path('nav');
+				$scope.y_background = 'y_background1';
+				$scope.borrow="注册成功，请登录";
+				$scope.close = function(){
+					$scope.y_background = 'y_background';
+				}
 			},function(){
 				$scope.y_background = 'y_background1';
 				$scope.close = function(){
@@ -98,7 +101,7 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 //	登录
 	$scope.check = false;
 	$scope.updata={};
-	//	获取cookie函数
+//		获取cookie函数
 	function getcookie(objname){
 		var str = document.cookie.split("; ");
 		for(var i = 0;i < str.length;i ++){
@@ -106,20 +109,24 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 		if(arr[0] == objname) return unescape(arr[1]);
 		}
 	}
-	//获取username
-	var cookuser = getcookie('username')
-	//如果有则填写
-	if(cookuser){
-		$scope.updata.username=cookuser
+//	获取username，password
+	var cookuser = getcookie('username');
+	var cookpass = getcookie('password');
+//	如果有则填写
+	if(cookuser && cookpass){
+		$scope.updata.username=cookuser;
+		$scope.updata.password=cookpass;
 	}
 	$scope.login = function(){
 		if($scope.updata.username == '' || $scope.updata.username == null){
+			createCode();
 			$scope.y_background = 'y_background1';
 			$scope.borrow="请输入正确的登录账号!";
 			$scope.close = function(){
 				$scope.y_background = 'y_background';
 			}
 		}else if($scope.updata.password == '' || $scope.updata.password == null){
+			createCode();
 			$scope.y_background = 'y_background1';
 			$scope.borrow="请输入正确的密码!";
 			$scope.close = function(){
@@ -146,13 +153,15 @@ angular.module('py', []).controller("pyan",["$scope","$http","$location", functi
 					data:$scope.updata
 				}).then(function(e){
 					if($scope.check==true){
+//						cookie过期时间
 						function setCookie(cookie_name,value,Path,timeout){
 							var date = new Date();
 							date.setDate(date.getDate()+timeout)
 							document.cookie = cookie_name+"="+escape(value)+";path"+"="+Path+
 							';expires='+date.toGMTString()
 						}
-						setCookie('username',$scope.updata.username,'/',7)
+						setCookie('username',$scope.updata.username,'/',7);
+						setCookie('password',$scope.updata.password,'/',7);
 					}
 					window.localStorage.uid=e.data.uid;
 					window.localStorage.username=e.config.data.username;
