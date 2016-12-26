@@ -1,9 +1,13 @@
 <div class="lik_survey">
-    <h1>{{likTitle}}</h1>
-    <div class="lik_survey_question" ng-repeat="x in likData" quesType="{{x.option[0].type}}">
+    <h1>{{likData.title}}</h1>
+    <div class="lik_survey_question" ng-repeat="x in likData.option" quesType="">
         <div class="lik_ques_head">
             <div class="lik_num">{{$index+1}}</div>
             <div class="lik_ques">{{x.title}}</div>
         </div>
+        <quescont qtype="{{x.type}}"></quescont>
+        <!--<div class="lik_ques_cont" ng-repeat="l in x.opt" type="{{x.type}}">
+            <div class="lik_ques_opt"><input type="radio" name="{{$parent.$index}}" />{{l.op}}</div>
+        </div>-->
     </div>
 </div>
