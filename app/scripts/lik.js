@@ -3,34 +3,39 @@ angular.module('lik', [])
 		$scope.goBack = function() {
 			$location.path('nav')
 		}
-		$scope.hash=window.location.hash
-		console.log($scope.hash)
-//		$scope.hashUid=$scope.hash.split('=')[1].split('&')[0]
-//		$scope.hashId=$scope.hash.split('=')[2].split('=')[1]
+		$scope.hash = window.location.hash
+		$scope.idNeed = $scope.hash.split('?')[1]
+//		console.log($scope.idNeed)
 		$http({
 			method: 'get',
-			url: $rootScope.server + 'item',
-			params: {
-				uid: window.localStorage.uid,
-				id: window.localStorage.id
-			}
+			url: $rootScope.server + 'item?' + $scope.idNeed
 		}).then(function(e) {
-			console.log(e.data)
 			$scope.likData = e.data
+			console.log($scope.likData.option)
 		}, function() {})
-	}])
-	.directive('quescont', function() {
-		return {
-			template: '<div class="lik_ques_cont" ng-repeat="l in x.opt"><div class="lik_ques_opt"><input type="{{iptype}}" name="{{$parent.$index}}" />{{l.op}}</div></div>',
-			replace:true,
-			link:function(s,e,a){
-				if(a.qtype == 0){
-					s.iptype="text"
-				}else if(a.qtype==1){
-					s.iptype="radio"
-				}else if(a.qtype==2){
-					s.iptype="checkbox"
+		$scope.submit = function() {
+			console.log($scope.likData.option)
+			for(var i=0;i<$scope.likData.option.length;i++){
+				if($scope.likData.option[i].type==0){
+					$scope.likData.option[i].oop=$('.liktext').eq(i).val()
+				}else if($scope.likData.option[i].type==1){
+					/*for(var j=0;j<$scope.likData.option[i].opt.length;j++){
+						if($('.likradio')[j].attr('checked')=='true'){
+							$scope.likData.option[i].opt[j].num+=1
+						}
+					}*/
+				}else if($scope.likData.option[i].type==3){
+					console.log(i)
+					$scope.likData.option[i].oop=$('.likarea').eq(i).val()
 				}
 			}
+			console.log($scope.likData.option)
+			
+			$http({
+				url: $rootScope.server + 'item?' + $scope.idNeed,
+				method: 'put'
+			}).then(function() {
+
+			}, function() {})
 		}
-	})
+	}])

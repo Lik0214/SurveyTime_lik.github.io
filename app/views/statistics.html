@@ -1,15 +1,18 @@
 <div ng-controller="syjCtrl" style="padding:1.2rem 0 3.2rem;">
 	<div class="container">
-		<div class='container'  ng-repeat="x in fruit">
-			<h1>{{x.title}}</h1>
+		<!-- <div class='container'  ng-repeat="x in fruit">
+			<h1 >{{x.title}}</h1>
 			<div class="panel panel-default" >
 				<div class="panel-heading" >{{x.option[0].title}}</div>
-				<!-- <a>{{x.option[0].title}}</a> -->
+				<a>{{x.option[0].title}}</a>
 				<div class="panel-body">
 					<canvas id="doughnut" class="chart chart-doughnut" chart-data="_num" chart-labels="_op"></canvas>
 				</div>
+			</div> -->
+			<div id="syj_texts" class="container">
+				
 			</div>
-	
+
 			<!-- <div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">你觉得你爱学习吗</h3>
@@ -18,6 +21,8 @@
 					<canvas id="bar" class="chart chart-bar" chart-data="dataa" chart-labels="qwe"> chart-series="series"</canvas>
 				</div>
 			</div> -->
+			<!--<canvas id="bar" class="chart chart-bar" chart-data="syj_num" chart-labels="syj_op"chart-series="series"> </canvas>-->
+			<!--<canvas id="bar" class="chart chart-bar" chart-data=syj_num chart-labels=syj_op> chart-series="series"</canvas>-->
 		</div>
 	</div>
 </div>
