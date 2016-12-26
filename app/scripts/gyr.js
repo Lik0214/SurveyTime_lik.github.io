@@ -1,4 +1,4 @@
-angular.module('gyr', ['ui.router'])
+angular.module('gyr', ['ui.router','angular-clipboard'])
 	.directive('list2', function() {
 		return {
 			restrict: 'ECMA',
@@ -8,28 +8,36 @@ angular.module('gyr', ['ui.router'])
 
 	}).controller('yr', ['$rootScope', '$scope', '$location', '$http', function($rootScope, $scope, $location, $http) {
 		$scope.go = function() {
-			$location.path('nav')
-			window.location.reload()
+			$location.path('nav');
+			window.location.reload();
 		}
-		$scope.goOn = function() {
+		$scope.goOn = function(id) {
+			window.localStorage.id=$scope.gyr_arr[id].id;
 			$location.path('share')
 		}
+		$scope.goOn = function(a) {
+			$scope.gyr_id = a;
+			$scope.gyr_luyou = 'ddadad?id='+$scope.gyr_id;
+			console.log(a);
+//			gyr_xinas.style.display = 'block'
+		}
+		$scope.goSta = function(id) {
+			window.localStorage.id=$scope.gyr_arr[id].id;
+		}
 		$scope.add = function() {
-			$location.path('nav/add')
+			$location.path('nav/add');
 		}
 		$scope.mine = function() {
-			$location.path('mine')
+			$location.path('mine');
 		}
-		$scope.username = window.localStorage.username
+		$scope.username = window.localStorage.username;
 		$http({
 			url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
 			method: "get"
 		}).then(function(e) {
-			$scope.gyr_arr = e.data
-			console.log(e)
-		}, function() {
-
-		});
+			$scope.gyr_arr = e.data;
+			console.log(e);
+		}, function() {});
 		$scope.remove = function(id) {
 			var makeSure = confirm('确定要删除吗？')
 			if(makeSure) {
@@ -37,11 +45,16 @@ angular.module('gyr', ['ui.router'])
 					url: 'http://47.90.20.200:1602/item?id=' + id,
 					method: 'delete'
 				}).then(function(e) {
-					window.location.reload()
-				}, function() {
-
-				});
+					window.location.reload();
+				}, function() {});
 			}
 
 		}
+		
+		new Clipboard('.btn', {
+            text: function(trigger) {
+        		return trigger.getAttribute('aria-label');
+    		}
+		});
 	}])
+	
