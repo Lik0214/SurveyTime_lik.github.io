@@ -3,11 +3,10 @@ angular.module('lik', [])
 		$scope.goBack = function() {
 			$location.path('nav')
 		}
-//		$scope.uid = window.localStorage.uid;
+		$scope.uid = window.localStorage.uid;
 		$http({
 			method: 'get',
-			url: $rootScope.server + 'item',
-			params:{uid:window.localStorage.uid}
+			url: $rootScope.server + 'item?uid='+$scope.uid
 		}).then(function(e) {
 			console.log(e)
 			$scope.likTitle = e.title
