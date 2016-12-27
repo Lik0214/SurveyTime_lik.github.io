@@ -1,38 +1,50 @@
 <div ng-controller="syjCtrl" style="padding:1.2rem 0 3.2rem;">
 	<div class="container" id="syj_heading">
+		<!-- 标题 -->
 		<h1 style="text-align:center;font-size:1rem;margin-bottom:0.4rem">{{fruit.title}}</h1>
-		<div class="panel panel-default">
+		
+		<!-- 条形统计图 -->
+		<div class="panel panel-default" ng-repeat="i in syj_qus1" ng-if="i.type==0">
 			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus1.title}}</h1>
+				<h1 class="penel-heading">{{i.title}} {{i.type}}</h1>
 			</div>
 			<div class="panel-body">
-			<canvas id="bar" class="chart chart-bar"  chart-data=syj_num chart-labels=syj_op chart-series="series"></canvas>
+				<canvas  id="bar" class="chart chart-bar" chart-data=syj_num chart-labels=syj_op chart-series="series" ></canvas>
 			</div>
 		</div>
-		<div class="panel panel-default">
+		
+		<!-- 饼统计图 -->
+		<div class="panel panel-default"  ng-repeat="i in syj_qus1" ng-if="i.type==1">
+			
 			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus2.title}}</h1>
+				<h1 class="penel-heading">{{i.title}} {{i.type}}</h1>
 			</div>
+			
 			<div class="panel-body">
-				<canvas id="doughnut" class="chart chart-doughnut" chart-data=syj_num chart-labels=syj_op chart-labels="labels"></canvas> 
+				<canvas id="doughnut" class="chart chart-doughnut" chart-data="syj_num1" chart-labels="syj_op1"></canvas> 
 			</div>
+			
 		</div>
-		<div class="panel panel-default">
+		
+		
+		<!-- 简答 -->
+		<!--<div class="panel panel-default">
 			<div class="panel-heading">
 				<h1 class="penel-heading">{{syj_qus3.title}}</h1>
 			</div>
 			<div class="panel-body">
 				This is a answer
 			</div>
-			
-		</div>
-		<div class="panel panel-default">
+		</div>-->
+		
+		<!-- 问答 -->
+		<!--<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus4.title}}</h1>
+				<h1 class="penel-heading">{{syj_qus3.title}}</h1>
 			</div>
 			<div class="panel-body">
 				This is  a answer
 			</div>
-		</div>
+		</div>-->
 	</div>
 </div>
