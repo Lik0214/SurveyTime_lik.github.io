@@ -15,10 +15,8 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 			window.localStorage.id=$scope.gyr_arr[id].id;
 			$location.path('share')
 		}
-		$scope.goOn = function(a) {
-			$scope.gyr_id = a;
-			$scope.gyr_luyou = 'ddadad?id='+$scope.gyr_id;
-			console.log(a);
+		$scope.goOn = function(a,b) {
+			$scope.gyr_luyou = 'http://localhost:9000/#!/share/servey?uid='+a+'&id='+b
 //			gyr_xinas.style.display = 'block'
 		}
 		$scope.goSta = function(id) {
@@ -53,6 +51,7 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 		
 		new Clipboard('.btn', {
             text: function(trigger) {
+            	alert('复制成功')
         		return trigger.getAttribute('aria-label');
     		}
 		});

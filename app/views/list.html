@@ -1,9 +1,7 @@
 <div>
 	<div class="list" ng-repeat="a in gyr_arr">
-			<p><a ng-click="goSta($index)" ui-sref=".sta">{{a.title}}</a></p>
-		<a ng-click="goOn()">
-			<p><a ui-sref=".sta">{{a.title}}</a></p>
-		<a ng-click="goOn(a.id)" class="btn" data-clipboard-target="#foo">
+		<p><a ng-click="goSta($index)" ui-sref=".sta">{{a.title}}</a></p>
+		<a ng-click="goOn(a.uid,a.id)" class="btn" data-clipboard-target="#foo">
 			<span class="glyphicon glyphicon-share"></span>
 		</a>
 		<a href="javascript:;" ng-click="remove(a.id)">
