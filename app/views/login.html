@@ -12,15 +12,15 @@
 		<!--//注册-->
 		<div class="y_nav_center_left" id="y_nav_center_left">
 			<div>
-				<span class="icon-user"></span>
-				<input type="text" placeholder="请输入手机号" ng-model="data.username"/>
+				<span class="glyphicon glyphicon-user"></span>
+				<input type="text" placeholder="请输入邮箱" ng-model="data.username"/>
 			</div>
 			<div class="y_nav_mtop">
-				<span class="icon-lock"></span>
+				<span class="glyphicon glyphicon-lock"></span>
 				<input type="password" placeholder="请输入密码" ng-model="data.password"/>
 			</div>
 			<div class="y_nav_mtop">
-				<span class="icon-lock"></span>
+				<span class="glyphicon glyphicon-lock"></span>
 				<input type="password" placeholder="请重新输入密码" ng-model="data.word"/>
 			</div>
 			<span class="y_denglu">
@@ -30,25 +30,25 @@
 		<!--//登录-->
 		<div class="y_nav_center_right" id="y_nav_center_right">
 			<div>
-				<span class="icon-user"></span>
-				<input type="text" placeholder="请输入手机号" ng-model="updata.username" id="y_dl_phone"/>
+				<span class="glyphicon glyphicon-user"></span>
+				<input type="text" placeholder="请输入邮箱" ng-model="updata.username" ng-value="deng" id="y_dl_phone"/>
 			</div>
 			<div class="y_nav_mtop">
-				<span class="icon-lock"></span>
+				<span class="glyphicon glyphicon-lock"></span>
 				<input type="password" placeholder="请输入密码" ng-model="updata.password" id="y_dl_pass"/>
 			</div>
 			<div class="y_nav_mtop">
-				<span class="icon-lock"></span>
+				<span class="glyphicon glyphicon-lock"></span>
 				<input type="text" id="input" ng-model="security" />
 				<div id="code"></div>
 				<div id="change">看不清，换一张</div>
 			</div>
-			<!--<div class="y_nav_mtop_cook">
-				<input type="check" />
-			</div>-->
+			<span class="y_nav_mtop_cook">
+				<input type="checkbox" ng-checked="check" ng-model="check" />
+				记住密码
+			</span>
 			<span class="y_denglu">
 				<p id="y_dlan" ng-click="login()">登录</p>
-				<a id="y_dlan" ng-click='fn()'>登录</a>
 			</span>
 		</div>
 	</div>

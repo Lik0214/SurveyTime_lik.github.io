@@ -17,35 +17,26 @@
 	display: -webkit-box;
 	-webkit-box-orient: horizontal;	
 }
-.yr_logo{
-	-webkit-box-flex: 2;
-	font-size: 0.8rem;
-	
-}
 .yr_logo a{
 	color: #fff;
 	margin-left: .5rem;
 }
-.yr_username{
-	-webkit-box-flex: 3;
+.yr_logo>a>img{
+	height: 2rem;
+	margin-left: 2.5rem;
 }
-.yr_username p{
-	font-family: "微软雅黑";
-	color: #fff;
-	margin-left: 5rem;
-	font-size: .75rem;
-}
+
 .yr_fa{
 	width: 100%;
 	overflow: hidden;
 	margin-top:2.5rem;
 }
 .yr_content{
-	width: 300%;
+	width:100%;
 	-background: red;
 }
 .yr_content>div{
-	width: calc(100%/3);
+	width: 100%;
 	-background: red;
 	float: left;
 }
@@ -99,4 +90,10 @@
 	color: #222828;
 	font-family: "微软雅黑";
 	
+}
+textarea{
+	width: 16rem;
+	height: 3rem;
+	border: 0.025rem solid #000;
+	color: #000;
 }

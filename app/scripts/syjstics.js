@@ -1,33 +1,54 @@
 angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getData",function ($scope,$http,getData) {
+  	$scope.syj_server="http://47.90.20.200:1602/item?uid=";
+	$scope.coo = window.localStorage.uid;
 
-  /*$scope.asd = ["body", "girl", "不男不女"];
-  $scope.datas = [300, 500, 100];
-  $scope.qwe = ["body", "girl", "不男不女"];
-  $scope.dataa = [300, 500, 100];*/
-  //$scope.server="http://47.90.20.200:1602/item";
-  $scope.coo = window.localStorage.uid;
-  getData.post("http://47.90.20.200:1602/item",{uid:$scope.coo},function(respose){
-  	$scope.fruit=respose.data;
-  	console.log($scope.fruit)
-  })
-	/*$http({
-  		url:$scope.server,
-     	method:"get"
-  	}).then(function(e){
-  		$scope.json2=e.data;
-  		console.log($scope.json2)
-  	},function(){});*/
+  	getData.get("http://47.90.20.200:1602/item",{uid:window.localStorage.uid,id:window.localStorage.id},function(respose){
+	  	$scope.fruit=respose.data;
 
+	  	console.log($scope.fruit)
+	  	var syj_arr=[];
+	  	var syj_str='';
+		$scope.syj_num=[];
+		$scope.syj_op=[];
+		$scope.syj_a=true;
+		$scope.syj_b=false;
+		for(var i=0;i<$scope.fruit.option.length;i++){
+			console.log($scope.fruit.option[i].type)
+			if($scope.fruit.option[i].type == 0){
+				for(var h=0;h<$scope.fruit.option[i].opt.length;h++){
+					/*if(){
+
+					}*/
+				}
+				$scope.syj_qus1=$scope.fruit.option[0];
+			}else if($scope.fruit.option[i].type == 1){
+				$scope.syj_qus2=$scope.fruit.option[1];
+			}else if($scope.fruit.option[i].type == 2){
+				$scope.syj_qus3=$scope.fruit.option[2];
+			}else{
+				$scope.syj_qus4=$scope.fruit.option[3];
+			}
+			for(var j=0;j<$scope.fruit.option[i].opt.length;j++){
+				//console.log($scope.fruit.option[i].opt[j].op)
+				
+				if($scope.fruit.option[i].opt[j].num == 0){
+					$scope.syj_num=[2,2,2];
+					$scope.syj_op=["none","none","none"]
+				}
+				//$scope.syj_op.push($scope.fruit.option[i].opt[j].op);
+			}
+		}
+	})
 }]).service("getData",["$http",function($http){
 	return{
-		get:function(url,callbk){
+		get:function(url,data,callbk){
 			$http({
 				url:url,
-				method:"get"
+				method:"get",
+				params:data
 			}).then(function(e){
 				callbk(e)
 			},function(){
-				alert("失败了")
 			})
 		},
 		post:function(url,data,callbk){
@@ -38,7 +59,6 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
 			}).then(function(e){
 				callbk(e)
 			},function(){
-				alert("失败了")
 			})
 		}
 	} 
@@ -47,24 +67,4 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
 
 
 
-
-/*.controller("syjCtrl",["$scope","$http","getData",function($scope,$http,getData){
-	 getData.get("http://47.90.20.200:1602/news2/",function(e){
-      $scope.data=e.data;
-      console.log($scope.data);
-    })
-}]).service("getData",["$http",function($http){
-	return{
-		get:function(url,callbk){
-			$http({
-				url:url,
-				method:"get"
-			}).then(function(e){
-				callbk(e)
-			},function(){
-				alert("失败了")
-			})
-		}
-	} 
-}])*/
   
