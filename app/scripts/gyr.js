@@ -17,7 +17,7 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 		}
 		$scope.goOn = function(a,b) {
 			$scope.gyr_luyou = 'http://localhost:9000/#!/share/servey?uid='+a+'&id='+b
-//			gyr_xinas.style.display = 'block'
+
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id=$scope.gyr_arr[id].id;
@@ -40,7 +40,7 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 			var makeSure = confirm('确定要删除吗？')
 			if(makeSure) {
 				$http({
-					url: 'http://47.90.20.200:1602/item?id=' + id,
+					url: 'http://47.90.20.200:1602/item?id='+id,
 					method: 'delete'
 				}).then(function(e) {
 					window.location.reload();
@@ -48,11 +48,6 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 			}
 
 		}
-		new Clipboard('.btn-copy', {
-            text: function(trigger) {
-            	alert('复制成功')
-        		return trigger.getAttribute('aria-label');
-    		}
-		});
+
 	}])
 	

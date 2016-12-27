@@ -1,5 +1,5 @@
 angular.module('gyrmine',['ui.router'])
-	.controller('mine',['$scope','$location', function($scope,$location){
+	.controller('mine',['$rootScope','$scope','$location','$http', function($rootScope,$scope,$location,$http){
  	$scope.go=function(){
  		$location.path('nav')
  	}
@@ -17,6 +17,14 @@ angular.module('gyrmine',['ui.router'])
  		$scope.y_tankuang = 'y_tankuang1';
  	}
  	$scope.ynone = function(){
+ 		$http({
+ 			url:$rootScope.server+"users/login",
+ 			method:'get',
+ 		}).then(function(e){
+ 			console.log(e)
+ 		},function(){
+ 			
+ 		})
 	 	$scope.y_tankuang = 'y_tankuang';
 	}
  	$scope.usename = function(){
@@ -25,4 +33,5 @@ angular.module('gyrmine',['ui.router'])
  	$scope.yzili = function(){
  		$scope.y_tan_user = 'y_tan_user';
  	}
+ 	
  }])
