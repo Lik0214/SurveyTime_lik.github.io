@@ -19,4 +19,10 @@ angular.module('gyrmine',['ui.router'])
  	$scope.ynone = function(){
 	 	$scope.y_tankuang = 'y_tankuang';
 	}
+ 	$scope.usename = function(){
+ 		$scope.y_tan_user = 'y_tan_usera';
+ 	}
+ 	$scope.yzili = function(){
+ 		$scope.y_tan_user = 'y_tan_user';
+ 	}
  }])
