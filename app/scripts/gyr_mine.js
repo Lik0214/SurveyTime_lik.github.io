@@ -12,5 +12,11 @@ angular.module('gyrmine',['ui.router'])
  	$scope.exit = function(){
  		$location.path('login')
  	}
- 	$scope.username = window.localStorage.username
+ 	$scope.username = window.localStorage.username;
+ 	$scope.passblock = function(){
+ 		$scope.y_tankuang = 'y_tankuang1';
+ 	}
+ 	$scope.ynone = function(){
+	 	$scope.y_tankuang = 'y_tankuang';
+	}
  }])
