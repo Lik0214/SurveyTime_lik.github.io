@@ -1,4 +1,4 @@
-<div class="y_box" ng-controller="pyan">
+<div class="y_box" id="y_box" ng-controller="pyan">
 	<div class="y_logo">
 		<div class="y_logo_bot">
 
@@ -60,3 +60,7 @@
 	</div>
 	
 </div>
+<script>
+	var h = window.innerHeight
+	$('#y_box').css('height',h)
+</script>

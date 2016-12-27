@@ -70,5 +70,5 @@ angular
 		$urlRouterProvider.when('','login')
 	}])
   .controller('rootCtrl', ['$rootScope', function($rootScope){
-  	$rootScope.server = 'http://47.90.20.200:1602/'
+  	$rootScope.server = 'http://www.surveytime.cn:1602/'
   }]);

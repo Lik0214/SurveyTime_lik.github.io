@@ -5,7 +5,6 @@ angular.module('lik', [])
 		}
 		$scope.hash = window.location.hash
 		$scope.idNeed = $scope.hash.split('?')[1]
-			//		console.log($scope.idNeed)
 		$http({
 			method: 'get',
 			url: $rootScope.server + 'item?' + $scope.idNeed
