@@ -28,9 +28,9 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 		var codeLength = 4; //验证码的长度  
 		//	     var checkCode = document.getElementById("code");   
 		var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-			'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y'); //随机数  
+			'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数  
 		for(var i = 0; i < codeLength; i++) { //循环操作  
-			var index = Math.floor(Math.random() * 60); //取得随机数的索引（0~35）  
+			var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）  
 			code1 += random[index]; //根据索引取得随机数加到code上  
 		}
 		$('#code').html(code1); //把code值赋给验证码  
@@ -133,8 +133,6 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 	//	获取username，password
 	var cookuser = getcookie('username');
 	var cookpass = getcookie('password');
-	//	var inputCode = document.getElementById("input").value.toUpperCase();
-	//	$scope.security = inputCode;
 
 	//	如果有则填写
 	if(cookuser && cookpass) {
@@ -164,7 +162,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 			$scope.close = function() {
 				$scope.y_background = 'y_background';
 			}
-		} else if($scope.security != code1) {
+		} else if($scope.security.toUpperCase() != code1.toUpperCase()) {
 			createCode();
 			$scope.y_background = 'y_background1';
 			$scope.borrow = "请输入正确的验证码!";
