@@ -69,10 +69,49 @@
 	display: none;
 }
 .y_tankuang1{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: block;
 }
-.y_tankuang2{
-	display: none;
+.y_tankuang1>span.y_pass{
+	display: block;
+	width: 100%;
+	height: 10rem;
+	position: absolute;
+	top: 29%;
+	padding: 0 1rem;
+}
+.y_tankuang1>span>input{
+	width: 100%;
+	height: 2.2rem;
+	padding-left: 0.5rem;
+	border-bottom: 1px solid #fff;
+}
+.y_tankuang1>span.y_name{
+	display: block;
+	width: 100%;
+	height: 10rem;
+	position: absolute;
+	top: 38%;
+	padding: 0 1rem;
+}
+.y_tankuang>span.y_pass{
+	display: block;
+	width: 100%;
+	height: 10rem;
+	position: absolute;
+	top: 29%;
+	padding: 0 1rem;
+}
+.y_tankuang>span.y_pass>input{
+	width: 100%;
+	height: 2.2rem;
+	padding-left: 0.5rem;
+	border-bottom: 1px solid #fff;
 }
 .y_tan_user{
 	width: 100vw;
@@ -84,9 +123,15 @@
 	display: none;
 }
 .y_tan_usera{
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: block;
 }
-.y_tankuang>span.y_pass{
+.y_tan_usera>span.y_name{
 	display: block;
 	width: 100%;
 	height: 10rem;
@@ -94,13 +139,13 @@
 	top: 29%;
 	padding: 0 1rem;
 }
-.y_tankuang>span>input{
+.y_tan_usera>span>input{
 	width: 100%;
 	height: 2.2rem;
 	padding-left: 0.5rem;
 	border-bottom: 1px solid #fff;
 }
-.y_tankuang>span.y_name{
+.y_tan_usera>span.y_name{
 	display: block;
 	width: 100%;
 	height: 10rem;
@@ -108,3 +153,28 @@
 	top: 38%;
 	padding: 0 1rem;
 }
+
+.y_tan_user>span.y_name{
+	display: block;
+	width: 100%;
+	height: 10rem;
+	position: absolute;
+	top: 29%;
+	padding: 0 1rem;
+}
+.y_tan_user>span>input{
+	width: 100%;
+	height: 2.2rem;
+	padding-left: 0.5rem;
+	border-bottom: 1px solid #fff;
+}
+.y_tan_user>span.y_name{
+	display: block;
+	width: 100%;
+	height: 10rem;
+	position: absolute;
+	top: 38%;
+	padding: 0 1rem;
+}
+
+
