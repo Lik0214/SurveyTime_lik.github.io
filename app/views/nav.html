@@ -25,18 +25,21 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">请手动复制下面链接，分享</h4>
+        <h4 class="modal-title" id="myModalLabel">点击按钮复制链接</h4>
       </div>
       <div class="modal-body">
-        {{gyr_luyou}}
+        <textarea id="content" style="margin: 0; width: 100%;border: none;">{{gyr_luyou}}</textarea> 
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">我已复制</button>
+	    <input type="button" value="复制" onclick="jsCopy()" class="btn btn-default" data-dismiss="modal">
+
         
       </div>
     </div>
   </div>
 </div>
+
 	<div class="yr_footer">
 		<div class="yr_pkq">
 			<a href="javascript:;" ng-click="go()">
@@ -57,3 +60,12 @@
 		</div>
 	</div>
 </div>
+<script>
+function jsCopy(){ 
+        var e=document.getElementById("content");//对象是content 
+        e.select(); //选择对象 
+        document.execCommand("Copy"); //执行浏览器复制命令
+
+      
+    } 
+</script>
