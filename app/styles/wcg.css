@@ -12,13 +12,19 @@
 	display: block;
 }
 .wcg_tianja{
-	width:4rem;
-	height:4rem;
-	border:1px solid #CCCCCC;
+	width:2rem;
+	height:2rem;
+	border:1px solid #00AFF2;
 	text-align: center;
 	color: #CCCCCC;
-	line-height: 4rem;
+	line-height: 2rem;
 	border-radius: 8px;
+	color: #00AFF2;
+}
+.wcg_tile input{
+	position: relative;
+	top:-5px;
+	color: #00AFF2;
 }
 .wcg_zhu{
 	

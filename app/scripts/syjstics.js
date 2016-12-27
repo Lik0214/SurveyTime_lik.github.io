@@ -7,11 +7,11 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
 	  	console.log($scope.fruit)
 	  	var syj_arr=[];
 	  	var syj_str='';
-	  	$scope.colora=["red","bule","yellow"];
-		$scope.syj_num=[1,2,3];
+	  	
+		/*$scope.syj_num=[1,2,3];
 		$scope.syj_op=[1,2,3];
 		$scope.syj_num1=[1,2,3];
-		$scope.syj_op1=[1,2,3];
+		$scope.syj_op1=[1,2,3];*/
 		//循环num  op
 	   for(var i=0;i<$scope.fruit.length;i++){
 	   	  $scope.syj_arr.push({num:[],op:[]})
