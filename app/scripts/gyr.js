@@ -16,7 +16,7 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 			$location.path('share')
 		}
 		$scope.goOn = function(a,b) {
-			$scope.gyr_luyou = 'http://localhost:9000/#!/share/servey?uid='+a+'&id='+b
+			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid='+a+'&id='+b
 //			gyr_xinas.style.display = 'block'
 		}
 		$scope.goSta = function(id) {
@@ -49,11 +49,6 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 
 		}
 		
-		new Clipboard('.btn_copy', {
-            text: function(trigger) {
-            	alert('复制成功')
-        		return trigger.getAttribute('aria-label');
-    		}
-		});
+		
 	}])
 	
