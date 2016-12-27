@@ -45,11 +45,22 @@
 			</div>
 			<br>
 		</div>
+		<div class="wcg_tile">
 		选择问题类型：<span style="color: red;">{{a.da2}}</span><br><br>
-		<input type="radio" name="sex1{{$index}}" value="0" ng-click="sex0('no'+$index,0,$index)" ng-model="wcg_chaun[0].option[$index].type" /> 回答
+		<label class="radio-inline">
+		<input type="radio" name="sex1{{$index}}" value="0" ng-click="sex0('no'+$index,0,$index)" ng-model="wcg_chaun[0].option[$index].type" /> 填空
+		</label>
+		<label class="radio-inline">
 		<input type="radio" name="sex1{{$index}}" value="1" ng-click="sex1('no'+$index,1,$index)" ng-model="wcg_chaun[0].option[$index].type" /> 单选
+		</label>
+		<label class="radio-inline">
 		<input type="radio" name="sex1{{$index}}" value="2" ng-click="sex2('no'+$index,2,$index)" ng-model="wcg_chaun[0].option[$index].type" /> 多选
+		</label>
+		<label class="radio-inline">
 		<input type="radio" name="sex1{{$index}}" value="3" ng-click="sex3('no'+$index,3,$index)" ng-model="wcg_chaun[0].option[$index].type" /> 简答
+	    </label>
+
+		</div>
 	</div>
 	<div ng-click="btn()" class="wcg_tianja"><i class="glyphicon glyphicon-plus"></i></div>
 	<div class="btn btn-primary" style="width: 100%;margin:10px 0 3.6rem;" ng-click="wcg_over()">完成</div>

@@ -20,9 +20,12 @@ input{
 	background: none;
 	color: #fff;
 }
-.y_box{
+html,body{
 	width: 100%;
 	-height: 100vh;
+	position: relative;
+}
+.y_box{
 	background: url(../images/bg.jpg) center no-repeat;
     background-size: 100% 100%;
 }
@@ -147,7 +150,7 @@ input{
 /*.y_nav_mtop_yz{
 	margin-top: 0.5rem;
 }*/
-.y_nav_mtop>div{
+.y_nav_mtopo>div{
 	margin-left: 0.3rem;
 	line-height: 1.95rem;
 	text-align: center;
@@ -157,24 +160,38 @@ input{
 	border-radius: 8px;
 	padding: 0 0.3rem;
 }
-.y_nav_mtop>#input{
-	width: 2.5rem;
+.y_nav_mtopo{
+	margin-top: 0.3rem;
+	margin: 0 0.5rem;
+    height: 1.95rem;
+    display: flex;
+    margin-top: 0.3rem;
+    /*background: pink;*/
+}
+.y_nav_mtopo>#change{
+	padding: 0 0.3rem;
+}
+.y_nav_mtopo>#input{
+	width: 4rem;
 	float: left;
 	border-radius: 8px;
 	background: rgba(0,0,0,0.4);
 	border-radius: 10px;
 	color: #fff;
-	margin-left: 0.4rem;
+	letter-spacing: 3px;
+	padding-left: 0.3rem;
+	text-align: center;
 }
-.y_nav_mtop>#code{
+.y_nav_mtopo>#code{
+	width: 4rem;
 	float: left;
 	border-radius: 8px;
 	background: rgba(0,0,0,0.4);
-	color: #fff;
+	color: #8c88ff;
 	margin-left: 0.3rem;
-	padding: 0 0.4rem;
+	letter-spacing: 3px;
 }
-.y_nav_mtop>#btn{
+.y_nav_mtop_cook>#btn{
 	margin-left: 0.3rem;
 	line-height: 1.95rem;
 	height: 1.95rem;

@@ -1,37 +1,43 @@
 <div ng-controller="syjCtrl" style="padding:1.2rem 0 3.2rem;">
-	<div class="container" id="syj_heading">
-		<h1 style="text-align:center;font-size:1rem;margin-bottom:0.4rem">{{fruit.title}}</h1>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus1.title}}</h1>
+	<h1 style="text-align:center;font-size:1rem;margin-bottom:0.4rem">{{fruit.title}}</h1>
+	<div class="container" id="syj_heading" ng-repeat="a in fruit" style="background: none;border: none;">
+		<!-- 标题 -->
+		
+		<!-- 饼统计图 -->
+		<div class="panel panel-default" ng-show="1==a.type" style="background: none;border: none;">
+			<div class="panel-heading" style="background: none;border: none;">
+				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem;background: none;border: none;">{{a.title}}</h1>
 			</div>
 			<div class="panel-body">
-			<canvas id="bar" class="chart chart-bar"  chart-data=syj_num chart-labels=syj_op chart-series="series"></canvas>
+				<canvas id="pie" class="chart chart-pie" chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-labels="labels" ></canvas> 
 			</div>
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus2.title}}</h1>
+		
+		<!-- 条形统计图 -->
+		<div class="panel panel-default" ng-show="2==a.type" style="background: none;border: none;">
+			<div class="panel-heading"style="border: none;background: none;">
+				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h1>
 			</div>
-			<div class="panel-body">
-				<canvas id="doughnut" class="chart chart-doughnut" chart-data=syj_num chart-labels=syj_op chart-labels="labels"></canvas> 
+			<div class="panel-body" > 
+				<canvas id="bar" class="chart chart-bar"  chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-series="series" ></canvas>
 			</div>
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus3.title}}</h1>
+		<!-- 问答 -->
+		<div class="panel panel-default" ng-show="3==a.type" style="border: none;background: none;">
+			<div class="panel-heading" style="background: none;border: none;">
+				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem; border: none;background: none;">{{a.title}}</h1>
 			</div>
 			<div class="panel-body">
-				This is a answer
+				{{a.oop}}
 			</div>
-			
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h1 class="penel-heading">{{syj_qus4.title}}</h1>
+		<!-- 简答 -->
+		<div class="panel panel-default" ng-show="0==a.type" style="border: none;background: none;">
+			<div class="panel-heading" style="border: none;background: none;">
+				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h1>
 			</div>
 			<div class="panel-body">
-				This is  a answer
+				{{a.oop}}
 			</div>
 		</div>
 	</div>

@@ -1,8 +1,6 @@
 <div class="y_box" id="y_box" ng-controller="pyan">
 	<div class="y_logo">
-		<div class="y_logo_bot">
-
-		</div>
+		<div class="y_logo_bot"></div>
 	</div>
 	<div class="y_nav">
 		<div class="y_nav_top">
@@ -13,11 +11,11 @@
 		<div class="y_nav_center_left" id="y_nav_center_left">
 			<div>
 				<span class="glyphicon glyphicon-user"></span>
-				<input type="text" placeholder="请输入邮箱" ng-model="data.username"/>
+				<input type="email" placeholder="请输入邮箱" ng-model="data.username"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
-				<input type="password" placeholder="请输入密码" ng-model="data.password"/>
+				<input type="password" placeholder="请输入6~14位密码" ng-model="data.password"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
@@ -37,12 +35,11 @@
 				<span class="glyphicon glyphicon-lock"></span>
 				<input type="password" placeholder="请输入密码" ng-model="updata.password" id="y_dl_pass"/>
 			</div>
-			<div class="y_nav_mtop">
-				<span class="glyphicon glyphicon-lock"></span>
-				<input type="text" id="input" ng-model="security" />
+			<span class="y_nav_mtopo">
+				<input type="text" id="input" ng-model="security" ng-value ="y_yanz"/>
 				<div id="code"></div>
 				<div id="change">看不清，换一张</div>
-			</div>
+			</span>
 			<span class="y_nav_mtop_cook">
 				<input type="checkbox" ng-checked="check" ng-model="check" />
 				记住密码
@@ -58,7 +55,6 @@
 			<div ng-click="close()">确定</div>
 		</div>
 	</div>
-	
 </div>
 <script>
 	var h = window.innerHeight
