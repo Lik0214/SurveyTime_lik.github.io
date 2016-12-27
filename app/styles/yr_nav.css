@@ -79,21 +79,18 @@
 	-webkit-box-flex: 1;
 	text-align: center;
 }
-.yr_footer .yr_pkq span{
+/*.yr_footer .yr_pkq>a{
 	color: #222828;
+}*/
+.yr_footer .yr_pkq span{
 	font-size: 1.25rem;
 	margin-top: 0.4rem;
 	margin-bottom: 0.3rem;
 }
 .yr_footer .yr_pkq p{
 	font-size:.6rem ;
-	color: #222828;
 	font-family: "微软雅黑";
 }
-
-textarea{
-	width: 16rem;
-	height: 3rem;
-	border: 0.025rem solid #000;
-	color: #000;
-}
+/*.yr_active{
+	background: red;
+}*/

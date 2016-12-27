@@ -166,6 +166,7 @@ angular.module('py', []).controller("pyan",["$rootScope","$scope","$http","$loca
 						setCookie('password',$scope.updata.password,'/',7);
 					}
 					window.localStorage.uid=e.data.uid;
+					window.localStorage.id=e.data.id;
 					window.localStorage.username=e.config.data.username;
 					window.localStorage.password=e.config.data.password;
 					$location.path('nav');

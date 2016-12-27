@@ -10,7 +10,24 @@
             <div list2 ui-view="content"></div>
 		</div>
 	</div>
-
+<!-- Modal -->
+<div style="z-index: 1555;" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">请手动复制下面链接，分享</h4>
+      </div>
+      <div class="modal-body">
+        {{gyr_luyou}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">我已复制</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 	<div class="yr_footer">
 		<div class="yr_pkq">
 			<a href="javascript:;" ng-click="go()">
@@ -27,7 +44,8 @@
 		<div class="yr_pkq">
 			<a href="javascript:;" ng-click="mine()">
 				<span class="glyphicon glyphicon-user"></span>
-                        <p>我 的</p></a>
+                        <p>我 的</p>
+			</a>
 		</div>
 	</div>
 </div>
