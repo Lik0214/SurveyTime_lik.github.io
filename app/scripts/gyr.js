@@ -48,6 +48,5 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 			}
 
 		}
-
 	}])
 	
