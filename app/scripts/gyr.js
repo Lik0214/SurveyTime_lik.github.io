@@ -49,11 +49,6 @@ angular.module('gyr', ['ui.router','angular-clipboard'])
 
 		}
 		
-		new Clipboard('.btn_copy', {
-            text: function(trigger) {
-            	alert('复制成功')
-        		return trigger.getAttribute('aria-label');
-    		}
-		});
+		
 	}])
 	
