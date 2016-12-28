@@ -1,14 +1,11 @@
 angular.module('gyrmine',['ui.router'])
-	.controller('mine',['$rootScope','$scope','$location','$http', function($rootScope,$scope,$location,$http){
+	.controller('yr_mine',['$rootScope','$scope','$location','$http', function($rootScope,$scope,$location,$http){
  	$scope.go=function(){
  		$location.path('nav')
  		
  	}
  	$scope.add= function(){
  		$location.path('nav/add')
- 	}
- 	$scope.mine= function(){
- 		$location.path('mine')
  	}
  	$scope.exit = function(){
  		$location.path('login')
@@ -28,15 +25,14 @@ angular.module('gyrmine',['ui.router'])
  		}).then(function(){
  			if($scope.password_new == $scope.password_new2){
  				$http({
- 					url:$rootScope.server+"users?id="+window.localStorage.id,
+ 					url:$rootScope.server+"users/"+window.localStorage.uid,
  					method:'put',
  					data:{
  						username:window.localStorage.username,
  						password:$scope.password_new
  					}
  				}).then(function(){
- 					console.log()
- 					alert('修改成功')
+ 					alert('修改成功,请重新登录');
  				},function(){
  					
  				})
@@ -50,14 +46,4 @@ angular.module('gyrmine',['ui.router'])
  	$scope.yr_close = function(){
  		$scope.y_tankuang = 'y_tankuang';
  	}
- 	$scope.yr_close2 = function(){
- 		$scope.y_tan_user = 'y_tan_user';
- 	}
- 	$scope.usename = function(){
- 		$scope.y_tan_user = 'y_tan_usera';
- 	}
- 	$scope.y_ecit = function(){
- 		
- 	}
- 	
  }])

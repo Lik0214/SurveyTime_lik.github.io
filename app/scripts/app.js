@@ -34,9 +34,14 @@ angular
 			url: '/nav',
 			templateUrl: 'views/nav.html'
 		})
-		$stateProvider.state('mine', {
+		$stateProvider.state('nav.mine', {
 			url: '/mine',
-			templateUrl: 'views/mine.html'
+			views: {
+				content: {
+					templateUrl: 'views/mine.html'
+				}
+			}
+			
 		})
 		$stateProvider.state('nav.add', {
 			url: '/add',

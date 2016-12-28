@@ -7,22 +7,15 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getD
 	  	console.log($scope.fruit)
 	  	var syj_arr=[];
 	  	var syj_str='';
-	  	
-		/*$scope.syj_num=[1,2,3];
-		$scope.syj_op=[1,2,3];
-		$scope.syj_num1=[1,2,3];
-		$scope.syj_op1=[1,2,3];*/
 		//循环num  op
 	   for(var i=0;i<$scope.fruit.length;i++){
 	   	  $scope.syj_arr.push({num:[],op:[]})
 	   	  for(var j=0;j<$scope.fruit[i].opt.length;j++){
-	   	  	
 	   	  	$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num)
 	   	  	$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op)
 	   	  }
 	   }
-	   console.log($scope.syj_arr)
-	   
+	   //console.log($scope.syj_arr)
 	})
 }]).service("getData",["$http",function($http){
 	return{

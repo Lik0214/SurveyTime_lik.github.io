@@ -79,9 +79,6 @@
 	-webkit-box-flex: 1;
 	text-align: center;
 }
-/*.yr_footer .yr_pkq>a{
-	color: #222828;
-}*/
 .yr_footer .yr_pkq span{
 	font-size: 1.25rem;
 	margin-top: 0.4rem;
@@ -91,6 +88,18 @@
 	font-size:.6rem ;
 	font-family: "微软雅黑";
 }
-/*.yr_active{
-	background: red;
-}*/
+a:hover{
+	color: #222828;
+}
+.active{
+	color: #B3143D;
+}
+.r_active{
+	color: #B3143D;
+}
+.yr_active{
+	color: #B3143D;
+}
+.modal-dialog{
+	margin-top: 6rem;
+}

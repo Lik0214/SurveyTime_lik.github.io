@@ -1,38 +1,18 @@
-<div ng-controller="mine">
+<div ng-controller="yr_mine">
 	<div class="r_header">
-		<p>个人中心</p>
-	<div class="r_head">
-		<div class="circle">
-			<img src="images/y_logo.png"/>
+		<div class="r_head">
+			<div class="circle">
+				<img src="images/y_logo.png" />
+			</div>
+			<p href="javascipr:;" class="headName">{{username}}</p>
 		</div>
-		<p href="javascipr:;" class="headName">{{username}}</p>
 	</div>
-	</div>
-	 <div class="btn btn-primary box" style="width: 95%;height:1.75rem;margin-top: 10px;margin-left:2.5%; word-spacing:18px;letter-spacing: 15px;" ng-click="passblock()">修改密码</div>
-	 <div class="btn btn-success box" style="width: 95%;height:1.75rem;margin-top: 10px;margin-left:2.5%; word-spacing:18px;letter-spacing: 15px;"ng-click="usename()">修改资料</div>
-	 <div class="btn btn-danger box exit" style="width: 95%;height:1.75rem;margin-left:2.5%; word-spacing:18px;letter-spacing: 15px;" ng-click="exit()">退出登录 </div>
-     
-    <div class="yr_footer">
-        <div class="yr_pkq">
-            <a href="javascript:;" ng-click="go()">
-                <span class="glyphicon glyphicon-list"></span>
-                <p>列 表</p>
-            </a>
-        </div>
-        <div class="yr_pkq">
-            <a href="javascript:;" ng-click="add()" class="yr_color">
-            	<span class="glyphicon glyphicon-plus"></span>
-                <p>添 加</p>
-            </a>
-        </div>
-        <div class="yr_pkq">
-            <span class="glyphicon glyphicon-user"></span>
-            <p>我 的</p>
-        </div>
-    </div>
-    
-    <div class="y_tankuang" ng-class="y_tankuang">
-    	<em class="r_close glyphicon glyphicon-remove-circle" ng-click="yr_close()"></em>
+
+	<div class="btn btn-primary box r_password" ng-click="passblock()">修改密码</div>
+	<div class="btn btn-danger box r_password"  ng-click="exit()">退出登录 </div>
+
+	<div class="y_tankuang" ng-class="y_tankuang">
+		<em class="r_close glyphicon glyphicon-remove-circle" ng-click="yr_close()"></em>
 		<span class="y_pass">
 			<p><i>*</i>初始密码:</p>
 			<input type="password" placeholder="请输入原密码" ng-model="password_old"/>
@@ -40,17 +20,7 @@
 			<input type="password" placeholder="请输入新密码" ng-model="password_new"/>
 			<p><i>*</i>确认密码:</p>
 			<input type="password" placeholder="请重新输入新密码" ng-model="password_new2"/>
-			<div class="btn btn-primary box" style="width: 95%;height:1.75rem;margin-top: 20px;margin-left:2.5%; word-spacing:18px;letter-spacing: 15px;" ng-click="ynone()">提交</div>
-		</span>
-	</div>
-	<div class="y_tan_user" ng-class="y_tan_user">
-		<em class="r_close glyphicon glyphicon-remove-circle" ng-click="yr_close2()"></em>
-		<span class="y_name">
-			<p>请输入</p>
-			<input placeholder="请输入原用户名"/>
-			<p>请输入</p>
-			<input placeholder="请输入新的用户名"/>
-			<div class="btn btn-success box" style="width: 95%;height:1.75rem;margin-top: 20px;margin-left:2.5%; word-spacing:18px;letter-spacing: 15px;" ng-click="y_ecit()">修改资料</div>
+			<div class="btn btn-primary box r_password"  ng-click="ynone()">提交</div>
 		</span>
 	</div>
 </div>
