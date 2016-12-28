@@ -11,6 +11,9 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 		$location.path('nav');
 		$scope.go = function() {
 			$location.path('nav');
+			$scope.active = 'active'
+			$scope.r_active = ''
+			$scope.yr_active = ''
 		}
 		$scope.goOn = function(a, b) {
 			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid=' + a + '&id=' + b
@@ -18,7 +21,6 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			$scope.r_active = ''
 			$scope.yr_active = ''
 		}
-
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
 		}
