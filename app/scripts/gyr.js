@@ -10,14 +10,7 @@ angular.module('gyr', ['ui.router'])
 			$location.path('nav');
 		}
 		$scope.goOn = function(a, b) {
-			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid=' + a + '&id=' + b
-			$http({
-				url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
-				method: "get"
-			}).then(function(e) {
-				$scope.gyr_arr = e.data;
-				console.log(e);
-			}, function() {});
+			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/thanks/servey?uid=' + a + '&id=' + b
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
@@ -34,7 +27,6 @@ angular.module('gyr', ['ui.router'])
 			method: "get"
 		}).then(function(e) {
 			$scope.gyr_arr = e.data;
-			console.log(e);
 		}, function() {});
 		$scope.remove = function(id) {
 			var makeSure = confirm('确定要删除吗？')
@@ -48,10 +40,8 @@ angular.module('gyr', ['ui.router'])
 						method: "get"
 					}).then(function(e) {
 						$scope.gyr_arr = e.data;
-						console.log(e);
 					}, function() {});
 				}, function() {});
 			}
-
 		}
 	}])

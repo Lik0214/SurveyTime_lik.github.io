@@ -211,8 +211,13 @@ angular
 					url: $rootScope.server+'item',
 					data: JSON.stringify($scope.wcg_chaun[0])
 				}).then(function(e) {
-					window.localStorage.wcg_id = e.data.id
-
+					$http({
+						url: $rootScope.server + "item?uid=" + window.localStorage.uid,
+						method: "get"
+					}).then(function(e) {
+						$scope.gyr_arr = e.data;
+					}, function() {});
+					window.location.hash = '#!/nav'
 				}, function() {})
 
 			}

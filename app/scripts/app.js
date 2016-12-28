@@ -55,11 +55,11 @@ angular
 				}
 			}
 		})
-		$stateProvider.state('share', {
-			url: '/share',
-			templateUrl: 'views/production.html'
+		$stateProvider.state('thanks', {
+			url: '/thanks',
+			templateUrl: 'views/thanks.html'
 		})
-		$stateProvider.state('share.servey', {
+		$stateProvider.state('thanks.servey', {
 			url: '/servey',
 			views: {
 				produc: {
