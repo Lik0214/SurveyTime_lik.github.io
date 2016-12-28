@@ -1,3 +1,4 @@
+
 <div ui-view="main" ng-controller="yr">
 
     <div class="yr_nav" style="z-index: 1551;">
@@ -16,18 +17,21 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">请手动复制下面链接，分享</h4>
+        <h4 class="modal-title" id="myModalLabel">点击按钮复制链接</h4>
       </div>
       <div class="modal-body">
-        {{gyr_luyou}}
+        <textarea id="content" style="margin: 0; width: 100%;border: none;">{{gyr_luyou}}</textarea> 
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">我已复制</button>
+	    <input type="button" value="复制" onclick="jsCopy()" class="btn btn-default" data-dismiss="modal">
+
         
       </div>
     </div>
   </div>
 </div>
+
 	<div class="yr_footer">
 		<div class="yr_pkq">
 			<a href="javascript:;" ng-click="go()">
@@ -49,3 +53,143 @@
 		</div>
 	</div>
 </div>
+<script>
+function jsCopy(){ 
+        var e=document.getElementById("content");//对象是content 
+        e.select(); //选择对象 
+        document.execCommand("Copy"); //执行浏览器复制命令
+
+      
+    } 
+</script>
+<canvas id="Canvas" style="position:fixed;left:0;top:0;z-index: -151;transition: 2s;"></canvas>
+    <!-- 实现原理 http://jsfiddle.net/umaar/fWSUk/ -->
+    <script>
+   
+        (function () {
+
+            var unit= 50,canvas, context, canvas2, context2,
+                height, width, xAxis, yAxis,
+                draw;
+            /**
+             * 初始化函数、变量，开始动画。
+             */
+            function init() {
+                canvas = document.getElementById("Canvas");
+                context = canvas.getContext("2d");
+                height = canvas.height = window.innerHeight;
+                width = canvas.width = window.innerWidth;
+                xAxis = Math.floor(height / 2); //返回小于等于 height / 2 的最大整数
+                yAxis = Math.floor(width / 8);  //返回小于等于 width / 8 的最大整数
+                context.save();
+                draw();
+            }
+
+            /**
+             * 绘制动画函数，每隔35毫秒执行一次
+             */
+            draw = function () {
+                // 清空 Canvas
+                context.clearRect(0, 0, width, height);
+                // BLUE 线性渐变
+                grd = context.createLinearGradient(0.000, 0.000, width, 0.000);
+                grd.addColorStop(0, 'rgba(189, 106, 155, 1.000)');
+                grd.addColorStop(1, 'rgba(189, 106, 155, 0.00)');
+                context.strokeStyle = grd;
+                context.lineWidth = 2;
+                // BLUE 正弦
+                context.beginPath();
+                drawSine(draw.t, unit, 0, 1);
+                context.stroke();
+                // 绘制BLUE 飞机
+                drawPlane(draw.t, unit, 0, 1);
+                
+                //GREEN 线性渐变
+                grd = context.createLinearGradient(0.000, 0.000, width, 0.000);
+                grd.addColorStop(0, 'rgba(151, 204, 18, 1.000)');
+                grd.addColorStop(1, 'rgba(151, 204, 18, 0.000)');
+                context.strokeStyle = grd;
+                // GREEN 正弦
+                context.beginPath();
+                drawSine(draw.t, unit*2, 50, -1);
+                context.stroke();
+                // GREEN 飞机
+                drawPlane(draw.t, unit*2, 50, -1 );
+                
+                //YELLOW 线性渐变
+                grd = context.createLinearGradient(0.000, 0.000, width, 0.000);
+                grd.addColorStop(0,  'rgba(245, 223, 22, 1.000)');
+                grd.addColorStop(1, 'rgba(245, 223, 22, 0.0)');
+                context.strokeStyle = grd;
+                //YELLOW 正弦
+                context.beginPath();
+                drawSine(draw.t, unit*2, 100, 1);
+                context.stroke();
+                //YELLOW 飞机
+                drawPlane(draw.t, unit*2, 100, 1 );
+
+                //RED 线性渐变
+                grd = context.createLinearGradient(0.000, 0.000, width, 0.000);
+                grd.addColorStop(0,  'rgba(204, 63, 24, 1.000)');
+                grd.addColorStop(1, 'rgba(204, 63, 24, 0.000)');
+                context.strokeStyle = grd;
+                //RED 正弦
+                context.beginPath();
+                drawSine(draw.t, unit*1/150, 150, -1);
+                context.stroke();
+                //RED 飞机
+                drawPlane(draw.t, unit*1/150, 150, -1 );
+                
+                // 恢复原来的样式
+                context.restore();
+
+                
+                // 更新时间、绘图
+                draw.seconds = draw.seconds - .007;
+                draw.t = draw.seconds * Math.PI;
+                setTimeout(draw , 35);
+            };
+
+            draw.seconds = 0;
+            draw.t = 0;
+
+
+            /**
+             * Line 正玄函数
+             */
+            function drawSine(t, unitval, offset, direction) {
+
+                // 循环绘制正弦曲线 line 已10px为单位
+                for (i = yAxis; i <= width; i += 10) {
+                    x = t + (-yAxis + i) / unitval;
+                    y = Math.sin(x) * direction;
+                    context.lineTo(i + offset, (unitval / 3) * y + xAxis);
+                }
+            }
+
+
+
+            /**
+             * 绘制飞机图像函数
+             */
+            function drawPlane(t, unitVal, offset, direction) {
+                var y = xAxis + (unitVal / 3) * Math.sin(t) * direction;
+                var img = new Image();
+                img.src = "http://canvas.migong.org/wp-content/uploads/2015/12/fly.png";
+                // 绘制飞机图像
+                context.beginPath();
+                context.drawImage(img, yAxis - 29  + offset , y - 16 );
+                //context.arc(yAxis, y, 5, 0, 2*Math.PI, false);
+                context.stroke();
+            }
+            init();
+
+            //监听浏览器可视窗口改变时执行
+            window.addEventListener('resize', function() {
+                height = canvas.height = window.innerHeight;
+                width = canvas.width = window.innerWidth;
+                context.clearRect(0, 0, width, height);
+                init();
+            }, false);
+        })();
+    </script>

@@ -17,13 +17,9 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 				console.log(e);
 			}, function() {});
 		}
-		$scope.goOn = function(id) {
-			window.localStorage.id = $scope.gyr_arr[id].id;
-			$location.path('share')
-		}
-		$scope.goOn = function(a, b) {
-			$scope.gyr_luyou = 'http://localhost:9000/#!/share/servey?uid=' + a + '&id=' + b
-
+		$scope.goOn = function(a,b) {
+			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid='+a+'&id='+b
+//			gyr_xinas.style.display = 'block'
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
