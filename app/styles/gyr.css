@@ -9,7 +9,7 @@
 .list>p>a{
 	-webkit-box-flex: 1;
 	font-size: 0.6rem;
-	color: #4D4D4D;
+	color: #666666;
 }
 .list a>span{
 	display:block;
