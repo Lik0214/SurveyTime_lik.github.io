@@ -1,10 +1,13 @@
 angular.module('syj',["chart.js"]).controller("syjCtrl", ["$rootScope","$scope","$http","getData",function ($rootScope,$scope,$http,getData) {
-  	$scope.syj_server=$rootScope.server + "/item?uid=";
+  	//ajax获取图形的数据
+  	$scope.syj_server=$rootScope.server + "item?uid=";
 	$scope.coo = window.localStorage.uid;
-    $scope.syj_arr = []
-  	getData.get($rootScope.server + "/item",{uid:window.localStorage.uid,id:window.localStorage.id},function(respose){
+	$scope.syj_id=window.localStorage.id;
+    $scope.syj_arr = [];
+    $scope.colors=["Red","Blue","Yellow"];
+  	getData.get($rootScope.server + "item",{uid:$scope.coo,id:$scope.syj_id},function(respose){
 	  	$scope.fruit=respose.data.option;
-	  	console.log($scope.fruit)
+	  	//console.log($scope.fruit)
 	  	var syj_arr=[];
 	  	var syj_str='';
 		//循环num  op
@@ -14,10 +17,27 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$rootScope","$scope",
 	   	  	$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num)
 	   	  	$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op)
 	   	  }
-	   }
+	   		//console.log($scope.syj_arr)
+	   	  	$scope.syj_arr.push({num:[],op:[]})
+	   	  	for(var j=0;j<$scope.fruit[i].opt.length;j++){
+	   	  		//判断选择多选有没有数据
+	   	  		if($scope.fruit[i].opt[j].num == 0){
+	   	  			$scope.fruit[i].opt[j].num = 1;
+	   	  			$scope.fruit[i].opt[j].op = "暂无数据";
+	   	  			//console.log($scope.fruit[i].opt[j]);
+	   	  			$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num);
+	   	  			$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op);
+	   	  		}else{
+	   	  			$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num)
+	   	  			$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op)
+	   	  		}
+	   	  	}
+	   	}
+	   	  //console.log($scope.fruit[i].oop)
 	   //console.log($scope.syj_arr)
 	})
 }]).service("getData",["$http",function($http){
+	//封装的请求方式
 	return{
 		get:function(url,data,callbk){
 			$http({

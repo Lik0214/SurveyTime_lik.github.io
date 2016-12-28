@@ -4,39 +4,39 @@
 		<!-- 标题 -->
 		
 		<!-- 饼统计图 -->
-		<div class="panel panel-default" ng-show="1==a.type" style="background: none;border: none;">
-			<div class="panel-heading" style="background: none;border: none;">
-				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem;background: none;border: none;">{{a.title}}</h1>
+		<div class="panel panel-default" ng-show="1==a.type">
+			<div class="panel-heading">
+				<h1 style="text-align: center; color:#444444;padding:.9rem 0; font-weight: bold; font-size: 1rem;">{{a.title}}</h1>
 			</div>
 			<div class="panel-body">
-				<canvas id="pie" class="chart chart-pie" chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-labels="labels" ></canvas> 
+				<canvas id="pie" class="chart chart-pie" chart-colors=colors chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-labels="labels" ></canvas> 
 			</div>
 		</div>
 		
 		<!-- 条形统计图 -->
-		<div class="panel panel-default" ng-show="2==a.type" style="background: none;border: none;">
-			<div class="panel-heading"style="border: none;background: none;">
-				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h1>
+		<div class="panel panel-default" ng-show="2==a.type">
+			<div class="panel-heading">
+				<h1 style="text-align: center;padding:.9rem 0; color:#444444; font-weight: bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h1>
 			</div>
-			<div class="panel-body" > 
-				<canvas id="bar" class="chart chart-bar"  chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-series="series" ></canvas>
+			<div class="panel-body"> 
+				<canvas id="bar" class="chart chart-bar" chart-colors=colors chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-series="series" ></canvas>
 			</div>
 		</div>
 		<!-- 问答 -->
-		<div class="panel panel-default" ng-show="3==a.type" style="border: none;background: none;">
-			<div class="panel-heading" style="background: none;border: none;">
-				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem; border: none;background: none;">{{a.title}}</h1>
+		<div class="panel panel-default" ng-show="3==a.type">
+			<div class="panel-heading">
+				<h1 style="text-align: center; color:#444444;padding:.9rem 0; font-weight: bold; font-size: 1rem; ">{{a.title}}</h1>
 			</div>
-			<div class="panel-body">
+			<div class="panel-body" id="syj_numCon" ng-if="a.oop==''?a.oop='暂无数据':a.oop" style="font-size:1rem;text-align:center;">
 				{{a.oop}}
 			</div>
 		</div>
 		<!-- 简答 -->
-		<div class="panel panel-default" ng-show="0==a.type" style="border: none;background: none;">
-			<div class="panel-heading" style="border: none;background: none;">
-				<h1 style="text-align: center; color:#444444; font-weight: bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h1>
+		<div class="panel panel-default" ng-show="0==a.type" >
+			<div class="panel-heading" >
+				<h1 style="text-align: center; color:#444444;padding:.9rem 0; font-weight: bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h1>
 			</div>
-			<div class="panel-body">
+			<div class="panel-body" style="font-size:1rem;text-align:center;"">
 				{{a.oop}}
 			</div>
 		</div>
