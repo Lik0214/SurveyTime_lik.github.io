@@ -1,20 +1,16 @@
-angular.module('gyr', ['ui.router', 'angular-clipboard'])
+angular.module('gyr', ['ui.router'])
 	.directive('list2', function() {
 		return {
 			restrict: 'ECMA',
 			replace: true,
 			templateUrl: 'views/list.html'
 		}
-
 	}).controller('yr', ['$rootScope', '$scope', '$location', '$http', function($rootScope, $scope, $location, $http) {
 		$scope.go = function() {
 			$location.path('nav');
-<<<<<<< HEAD
 		}
 		$scope.goOn = function(a, b) {
 			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid=' + a + '&id=' + b
-				//			gyr_xinas.style.display = 'block'
-=======
 			$http({
 				url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
 				method: "get"
@@ -22,11 +18,6 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 				$scope.gyr_arr = e.data;
 				console.log(e);
 			}, function() {});
-		}
-		$scope.goOn = function(a,b) {
-			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid='+a+'&id='+b
-//			gyr_xinas.style.display = 'block'
->>>>>>> origin/master
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
@@ -53,11 +44,7 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 					method: 'delete'
 				}).then(function(e) {
 					$http({
-<<<<<<< HEAD
 						url: $rootScope.server + "item?uid=" + window.localStorage.uid,
-=======
-						url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
->>>>>>> origin/master
 						method: "get"
 					}).then(function(e) {
 						$scope.gyr_arr = e.data;
