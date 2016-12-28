@@ -5,15 +5,21 @@ angular.module('lik', [])
 		}
 		$scope.hash = window.location.hash
 		$scope.idNeed = $scope.hash.split('?')[1]
-			//		console.log($scope.idNeed)
 		$http({
 			method: 'get',
 			url: $rootScope.server + 'item?' + $scope.idNeed
 		}).then(function(e) {
 			$scope.likData = e.data
 		}, function() {})
+		$scope.lik_success = false
 		$scope.submit = function() {
-			for(var i = 0; i < $scope.likData.option.length; i++) {
+			
+			for(var i = 0; i < $scope.likData.option.length; i++){
+				$scope.lik_text = $('.liktext').eq(i).val()
+				console.log($scope.lik_text)
+			}
+			
+			/*for(var i = 0; i < $scope.likData.option.length; i++) {
 				if($scope.likData.option[i].type == 0) {
 					$scope.likData.option[i].oop = $('.liktext').eq(i).val()
 				} else if($scope.likData.option[i].type == 1) {
@@ -39,6 +45,6 @@ angular.module('lik', [])
 				data:$scope.likData
 			}).then(function() {
 
-			}, function() {})
+			}, function() {})*/
 		}
 	}])

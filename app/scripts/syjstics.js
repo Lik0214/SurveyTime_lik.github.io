@@ -1,8 +1,8 @@
-angular.module('syj',["chart.js"]).controller("syjCtrl", ["$scope","$http","getData",function ($scope,$http,getData) {
-  	$scope.syj_server="http://47.90.20.200:1602/item?uid=";
+angular.module('syj',["chart.js"]).controller("syjCtrl", ["$rootScope","$scope","$http","getData",function ($rootScope,$scope,$http,getData) {
+  	$scope.syj_server=$rootScope.server + "/item?uid=";
 	$scope.coo = window.localStorage.uid;
     $scope.syj_arr = []
-  	getData.get("http://47.90.20.200:1602/item",{uid:window.localStorage.uid,id:window.localStorage.id},function(respose){
+  	getData.get($rootScope.server + "/item",{uid:window.localStorage.uid,id:window.localStorage.id},function(respose){
 	  	$scope.fruit=respose.data.option;
 	  	console.log($scope.fruit)
 	  	var syj_arr=[];
