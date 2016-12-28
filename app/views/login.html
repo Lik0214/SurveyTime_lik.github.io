@@ -1,4 +1,4 @@
-<div class="y_box" ng-controller="pyan">
+<div class="y_box" id="y_box" ng-controller="pyan">
 	<div class="y_logo">
 		<div class="y_logo_bot"></div>
 	</div>
@@ -11,15 +11,15 @@
 		<div class="y_nav_center_left" id="y_nav_center_left">
 			<div>
 				<span class="glyphicon glyphicon-user"></span>
-				<input type="email" placeholder="请输入邮箱" ng-model="data.username"/>
+				<input type="text" placeholder="请输入邮箱" ng-model="data.username" />
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
-				<input type="password" placeholder="请输入6~14位密码" ng-model="data.password"/>
+				<input type="password" placeholder="请输入6~14位密码" ng-model="data.password" ng-value="paw"/>
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
-				<input type="password" placeholder="请重新输入密码" ng-model="data.word"/>
+				<input type="password" placeholder="请重新输入密码" ng-model="data.word" ng-value="pawa"/>
 			</div>
 			<span class="y_denglu">
 				<p id="y_zcan" ng-click="signin()">注册</p>
@@ -29,14 +29,14 @@
 		<div class="y_nav_center_right" id="y_nav_center_right">
 			<div>
 				<span class="glyphicon glyphicon-user"></span>
-				<input type="text" placeholder="请输入邮箱" ng-model="updata.username" ng-value="deng" id="y_dl_phone"/>
+				<input type="text" placeholder="请输入邮箱" ng-model="updata.username" />
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
-				<input type="password" placeholder="请输入密码" ng-model="updata.password" id="y_dl_pass"/>
+				<input type="password" placeholder="请输入密码" ng-model="updata.password" />
 			</div>
 			<span class="y_nav_mtopo">
-				<input type="text" id="input" ng-model="security" ng-value ="y_yanz"/>
+				<input type="text" id="input" ng-model="security" ng-value="yzm"/>
 				<div id="code"></div>
 				<div id="change">看不清，换一张</div>
 			</span>
@@ -56,3 +56,9 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	var h = window.innerHeight
+	$('#y_box').css('height',h)
+</script>
+

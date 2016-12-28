@@ -11,20 +11,14 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 		$location.path('nav');
 		$scope.go = function() {
 			$location.path('nav');
-			$http({
-				url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
-				method: "get"
-			}).then(function(e) {
-				$scope.gyr_arr = e.data;
-				console.log(e);
-			}, function() {});
+		}
+		$scope.goOn = function(a, b) {
+			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid=' + a + '&id=' + b
 			$scope.active = 'active'
 			$scope.r_active = ''
 			$scope.yr_active = ''
 		}
-		$scope.goOn = function(a,b) {
-			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid='+a+'&id='+b
-		}
+
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
 		}
@@ -42,7 +36,7 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 		}
 		$scope.username = window.localStorage.username;
 		$http({
-			url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
+			url: $rootScope.server + "item?uid=" + window.localStorage.uid,
 			method: "get"
 		}).then(function(e) {
 			$scope.gyr_arr = e.data;
@@ -52,11 +46,11 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			var makeSure = confirm('确定要删除吗？')
 			if (makeSure) {
 				$http({
-					url: 'http://47.90.20.200:1602/item?id=' + id,
+					url: $rootScope.server + 'item?id=' + id,
 					method: 'delete'
 				}).then(function(e) {
 					$http({
-						url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
+						url: $rootScope.server + "item?uid=" + window.localStorage.uid,
 						method: "get"
 					}).then(function(e) {
 						$scope.gyr_arr = e.data;
