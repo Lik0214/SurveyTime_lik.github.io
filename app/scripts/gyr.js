@@ -21,10 +21,6 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 				console.log(e);
 			}, function() {});
 		}
-		$scope.goOn = function(a,b) {
-			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid='+a+'&id='+b
-//			gyr_xinas.style.display = 'block'
-		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
 		}
@@ -51,7 +47,6 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 				}).then(function(e) {
 					$http({
 						url: $rootScope.server + "item?uid=" + window.localStorage.uid,
-						url: "http://47.90.20.200:1602/item?uid=" + window.localStorage.uid,
 						method: "get"
 					}).then(function(e) {
 						$scope.gyr_arr = e.data;
