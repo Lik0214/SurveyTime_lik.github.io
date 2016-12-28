@@ -4,9 +4,20 @@
 		<a ng-click="goOn(a.uid,a.id)" class="btn_copy" data-toggle="modal" data-target="#myModal">
 			<span class="glyphicon glyphicon-share"></span>
 		</a>
-		<a href="javascript:;" ng-click="remove(a.id)">
+		<a href="javascript:;" ng-click="remove(a.id,$index)">
 			<span class="glyphicon glyphicon-remove"></span>
 		</a>
+	</div>
+	<div style="position: relative;margin-bottom: 5rem;text-align: center;">
+		
+	
+	<nav>
+    <ul class="pagination">
+    <li><a href="javascript:;" ng-click="wcg_left()">&laquo;</a></li>
+    <li ng-repeat="a in wcg_arrd" ng-click="wcg_diand($index)"><a href="javascript:;" style="{{a.se}}">{{$index+1}}</a></li>
+    <li><a href="javascript:;" ng-click="wcg_right()">&raquo;</a></li>
+   </ul>
+ </nav>
 	</div>
 </div>
 
