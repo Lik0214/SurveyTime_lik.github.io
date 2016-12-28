@@ -27,8 +27,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 		code1 = "";
 		var codeLength = 4; //验证码的长度  
 		//	     var checkCode = document.getElementById("code");   
-		var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-			'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数  
+		var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R','S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数  
 		for(var i = 0; i < codeLength; i++) { //循环操作  
 			var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）  
 			code1 += random[index]; //根据索引取得随机数加到code上  
@@ -37,18 +36,18 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 	}
 	//			var inputCode = document.getElementById("input").value.toUpperCase();
 	//校验验证码  
-	function validate() {
-		var inputCode = document.getElementById("input").value.toUpperCase(); //取得输入的验证码并转化为大写        
-		if(inputCode.length <= 0) { //若输入的验证码长度为0  
-			alert("请输入验证码！"); //则弹出请输入验证码  
-		} else if(inputCode != code1) { //若输入的验证码与产生的验证码不一致时  
-			alert("验证码输入错误！");
-			document.getElementById("input").value = "";
-			//清空文本框  
-		} else { //输入正确时  
-			alert("OK");
-		}
-	}
+//	function validate() {
+//		var inputCode = document.getElementById("input").value.toUpperCase(); //取得输入的验证码并转化为大写        
+//		if(inputCode.length <= 0) { //若输入的验证码长度为0  
+//			alert("请输入验证码！"); //则弹出请输入验证码  
+//		} else if(inputCode != code1) { //若输入的验证码与产生的验证码不一致时  
+//			alert("验证码输入错误！");
+//			document.getElementById("input").value = "";
+//			//清空文本框  
+//		} else { //输入正确时  
+//			alert("OK");
+//		}
+//	}
 
 	//	注册
 	$scope.data = {};
@@ -84,6 +83,8 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.y_background = 'y_background1';
 					$scope.borrow = "两次密码输入不一致";
 					$scope.close = function() {
+						$scope.paw = '';
+						$scope.pawa = '';
 						$scope.y_background = 'y_background';
 					}
 				} else {
@@ -168,6 +169,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 			$scope.borrow = "请输入正确的验证码!";
 			$scope.close = function() {
 				$scope.y_background = 'y_background';
+				$scope.yzm = '';
 			}
 		} else {
 			$http({
