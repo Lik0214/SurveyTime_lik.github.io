@@ -1,11 +1,10 @@
-angular.module('gyr', ['ui.router', 'angular-clipboard'])
+angular.module('gyr', ['ui.router'])
 	.directive('list2', function() {
 		return {
 			restrict: 'ECMA',
 			replace: true,
 			templateUrl: 'views/list.html'
 		}
-
 	}).controller('yr', ['$rootScope', '$scope', '$location', '$http', function($rootScope, $scope, $location, $http) {
 		$scope.active = 'active'
 		$scope.yr_bj = 'yr_bj'
@@ -23,7 +22,6 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			$scope.r_active = ''
 			$scope.yr_active = ''
 //			$scope.yr_bj = ''
-
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
@@ -47,6 +45,7 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			url: $rootScope.server + "item?uid=" + window.localStorage.uid,
 			method: "get"
 		}).then(function(e) {
+			$scope.gyr_arr = e.data;
 			$scope.gyr_arrs = e.data;
 			wcg_hans(0, 6)
 			$scope.$watch('gyr_arrs', function() {
@@ -119,6 +118,7 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 						url: $rootScope.server + "item?uid=" + window.localStorage.uid,
 						method: "get"
 					}).then(function(e) {
+						$scope.gyr_arr = e.data;
 						$scope.gyr_arrs = e.data;
 						wcg_hans($scope.numbers, 6)
 						console.log(e);
