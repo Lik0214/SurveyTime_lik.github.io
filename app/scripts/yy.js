@@ -59,7 +59,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.borrow = "请输入正确账号!";
 					$scope.close = function() {
 						$scope.y_background = 'y_background';
-						$scope.data.username = '';
+//						$scope.data.username = '';
 					}
 				} else if($scope.data.password == '' || $scope.data.password == null) {
 					$scope.y_background = 'y_background1';
@@ -71,7 +71,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.y_background = 'y_background1';
 					$scope.borrow = "密码必须是6~14位!";
 					$scope.close = function() {
-						$scope.data.password = '';
+//						$scope.data.password = '';
 						$scope.y_background = 'y_background';
 					}
 				} else if($scope.data.word == '' || $scope.data.word == null) {
@@ -79,7 +79,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.borrow = "请再一次输入密码!";
 					$scope.close = function() {
 						$scope.y_background = 'y_background';
-						$scope.data.word = '';
+//						$scope.data.word = '';
 					}
 				} else if($scope.data.word != $scope.data.password) {
 					$scope.y_background = 'y_background1';
