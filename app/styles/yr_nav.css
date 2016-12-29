@@ -26,7 +26,6 @@
 
 .yr_fa{
 	width: 100%;
-	overflow: hidden;
 	margin-top:2.5rem;
 }
 .yr_content{
@@ -70,6 +69,7 @@
 	position: fixed;
 	left: 0;
 	bottom: 0;
+	z-index: 5;
 }
 .yr_footer .yr_pkq{
 	-webkit-box-flex: 1;
@@ -88,13 +88,13 @@ a:hover{
 	color: #222828;
 }
 .active{
-	color: #CB9732;
+	color: #C4708A;
 }
 .r_active{
-	color: #CB9732;
+	color: #C4708A;
 }
 .yr_active{
-	color: #CB9732;
+	color: #C4708A;
 }
 .modal-dialog{
 	margin-top: 6rem;

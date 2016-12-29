@@ -178,7 +178,8 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 				$scope.y_background = 'y_background';
 				$scope.yzm = '';
 			}
-		} else {
+		} else {  // 登录
+			console.log($scope.updata);
 			$http({
 				url: $rootScope.server + "users/login",
 				method: "post",
@@ -195,9 +196,11 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					setCookie('username', $scope.updata.username, '/', 7);
 					setCookie('password', $scope.updata.password, '/', 7);
 				}
+				
 				window.localStorage.uid = e.data.uid;
-				window.localStorage.username = e.config.data.username;
-				window.localStorage.password = e.config.data.password;
+				window.localStorage.id=e.data.id;
+				window.localStorage.username=$scope.updata.username;
+				window.localStorage.password=$scope.updata.password;
 				$location.path('nav');
 			}, function() {
 				$scope.y_background = 'y_background1';
