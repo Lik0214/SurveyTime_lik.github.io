@@ -98,6 +98,9 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 						//				console.log(e)
 						$scope.y_background = 'y_background1';
 						$scope.borrow = "注册成功，请登录";
+						$scope.data.password = '';
+						$scope.data.word = '';
+						$scope.data.username = '';
 						$scope.close = function() {
 							$scope.y_background = 'y_background';
 						}
