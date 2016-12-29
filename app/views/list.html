@@ -6,7 +6,7 @@
     </div>
 	<div class="list" ng-repeat="a in gyr_arrs | f:page:6">
 
-		<p><a ng-click="goSta($index)" ui-sref=".sta">{{a.title}}</a></p>
+		<p><a ng-click="goSta(a.id)" ui-sref=".sta">{{a.title}}</a></p>
 		<a ng-click="goOn(a.uid,a.id)" class="btn_copy" data-toggle="modal" data-target="#myModal">
 			<span class="glyphicon glyphicon-share lv"></span>
 		</a>
