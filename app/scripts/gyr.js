@@ -8,19 +8,21 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 
 	}).controller('yr', ['$rootScope', '$scope', '$location', '$http', function($rootScope, $scope, $location, $http) {
 		$scope.active = 'active'
+		$scope.yr_bj = 'yr_bj'
 		$location.path('nav');
 		$scope.go = function() {
 			$location.path('nav');
 			$scope.active = 'active'
 			$scope.r_active = ''
 			$scope.yr_active = ''
+			$scope.yr_bj = 'yr_bj'
 		}
 		$scope.goOn = function(a, b) {
 			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid=' + a + '&id=' + b
-
 			$scope.active = 'active'
 			$scope.r_active = ''
 			$scope.yr_active = ''
+//			$scope.yr_bj = ''
 
 		}
 		$scope.goSta = function(id) {
@@ -30,12 +32,14 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			$location.path('nav/add');
 			$scope.active = ''
 			$scope.yr_active = ''
+			$scope.yr_bj = ''
 			$scope.r_active = 'r_active' 
 		}
 		$scope.mine = function() {
 			$location.path('nav/mine');
 			$scope.r_active = ''
  		    $scope.active = ''
+ 		    $scope.yr_bj = ''
  		    $scope.yr_active = 'yr_active'
 		}
 		$scope.username = window.localStorage.username;
@@ -116,7 +120,6 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 						method: "get"
 					}).then(function(e) {
 						$scope.gyr_arrs = e.data;
-
 						wcg_hans($scope.numbers, 6)
 						console.log(e);
 					}, function() {});
