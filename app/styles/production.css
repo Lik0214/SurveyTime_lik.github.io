@@ -4,23 +4,20 @@
 	overflow: hidden;
 	background:#E3E9E9;
 	box-sizing:border-box;
-	padding-top:2.5rem;
 	position:relative;
+	background:url(../images/bg2.jpg) no-repeat;
+	background-size:100% 100vh;
+	background-attachment:fixed;
+	color: #fff;
 }
 .lik_wrap .lik_info{
-	width:80%;
-	height:70%;
-	overflow: scroll;
-	background:#E3E9E9;
-	border:2px solid #fff;
-	border-radius:8px;
-	padding:1rem 0;
-	box-shadow:0 0 10px 7px #C5D3DA inset;
-	margin:0 auto;
+	width:100%;
+	height:100vh;
 }
 .lik_wrap .lik_info h1{
 	font-size:24px;
-	line-height:120%;
+	line-height:100vh;
+	color:#fff;
 	text-align: center;
 }
 .lik_wrap .lik_info p{
@@ -58,10 +55,12 @@
 .lik_survey h1{
 	width:100%;
 	height:1.8rem;
+	color:#A9906F;
 	line-height:1.8rem;
 	font-size:1.4rem;
 	text-align:center;
-	margin-top:-1.2rem;
+	margin-top:2rem;
+	font-family:"楷体";
 }
 .lik_survey .lik_survey_question{
 	width:90%;
@@ -74,14 +73,14 @@
 	clear:both;
 }
 .lik_survey .lik_survey_question .lik_num{
-	width:1.3rem;
-	height:1.3rem;
+	width:1.5rem;
+	height:1.5rem;
 	font-size:.8rem;
 	text-align:center;
-	line-height:1.3rem;
-	background-color:#f66;
-	border-radius:50%;
-	color:#906;
+	line-height:1.5rem;
+	background:url(../images/star_bg.png) no-repeat;
+	background-size:100% 100%;
+	color:#A9906F;
 	float:left;
 }
 .lik_survey .lik_survey_question .lik_ques{
@@ -109,8 +108,17 @@
 	height:1.5rem;
 	line-height:1.5rem;
 	text-align:center;
-	color:#fff;
-	background: #f60;
+	font-size:.8rem;
+	color:#A9906F;
+	background: #cff;
 	border-radius:8px;
 	margin:1rem auto;
+}
+textarea{
+	border:1px solid #eee;
+	background:transparent;
+}
+input[type="radio"],input[type="checkbox"]{
+	width:.8rem;
+	height:.9rem;
 }
