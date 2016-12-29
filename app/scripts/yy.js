@@ -95,7 +95,6 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 						method: "post",
 						data: $scope.data
 					}).then(function(e) {
-						//				console.log(e)
 						$scope.y_background = 'y_background1';
 						$scope.borrow = "注册成功，请登录";
 						$scope.data.password = '';
@@ -179,7 +178,6 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 				$scope.yzm = '';
 			}
 		} else {  // 登录
-			console.log($scope.updata);
 			$http({
 				url: $rootScope.server + "users/login",
 				method: "post",

@@ -6,8 +6,7 @@
 	box-sizing:border-box;
 	position:relative;
 	background:url(../images/bg2.jpg) no-repeat;
-	background-size:100% 100vh;
-	background-attachment:fixed;
+	background-size:100% 100%;
 	color: #555;
 }
 .lik_wrap .lik_info{
@@ -105,8 +104,6 @@
 .lik_survey .aSubmit{
 	display:block;
 	width:70%;
-	height:1.5rem;
-	line-height:1.5rem;
 	text-align:center;
 	font-size:.8rem;
 	color:#A9906F;
@@ -115,7 +112,7 @@
 	margin:1rem auto;
 }
 textarea{
-	border:1px solid #eee;
+	border:2px solid #eee;
 	background:transparent;
 }
 input[type="radio"],input[type="checkbox"]{
