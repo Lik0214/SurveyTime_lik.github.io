@@ -15,6 +15,7 @@ angular.module('gyr', ['ui.router'])
 			$scope.r_active = ''
 			$scope.yr_active = ''
 			$scope.yr_bj = 'yr_bj'
+			window.location.reload()
 		}
 		$scope.goOn = function(a, b) {
 			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/thanks/servey?uid=' + a + '&id=' + b
