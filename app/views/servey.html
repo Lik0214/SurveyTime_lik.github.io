@@ -16,6 +16,7 @@
             <div class="lik_ques_opt"><input type="checkbox" style="width:.6rem;height:.7rem;" name="{{$parent.$parent.$index}}" />{{l.op}}</div>
         </div>
         <input type="text" class="liktext" ng-show="x.type == 0" style="width:100%;height:1.5rem;border:1px solid #eee;background:transparent;text-indent:.2rem;color:#000;" />
+        <!--<summernote ng-show="x.type == 3" config="options" ng-model="text" class="summernote"></summernote>-->
         <textarea class="likarea" ng-show="x.type == 3" style="width:100%;height:5rem;box-sizing:border-box;padding:.5rem;"></textarea>
     </div>
     <button class="aSubmit" ng-click="lik_submit()">提交数据</button>
