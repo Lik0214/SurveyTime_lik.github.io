@@ -1,5 +1,4 @@
 <div ng-controller="wcg_ju" class="wcg_zhu">
-
 	<input type="text" placeholder="请输入调查的主题" style="width:100%;margin-top:10px;text-align: center;" class="form-control" ng-model="wcg_chaun[0].title">
 	<input ng-model="wcg_title" style="border: none; background: none; color: red;"></input>
 	<div ng-repeat="a in wcg_arr_1" class="wcg_xun">
@@ -59,10 +58,11 @@
 		<label class="radio-inline">
 		<input type="radio" name="sex1{{$index}}" value="3" ng-click="sex3('no'+$index,3,$index)" ng-model="wcg_chaun[0].option[$index].type" /> 简答
 	    </label>
-
 		</div>
 	</div>
 	<div ng-click="btn()" class="wcg_tianja"><i class="glyphicon glyphicon-plus"></i></div>
 	<div class="btn btn-primary" style="width: 100%;margin:10px 0 3.6rem;" ng-click="wcg_over()">完成</div>
-				<img src="images/2.png" class="xhr"/>
+	<div class="xhr" style="position:relative;bottom: 6.5rem; left: 13rem;" >
+		 <img src="images/2.png"/>
+	</div>
 </div>
