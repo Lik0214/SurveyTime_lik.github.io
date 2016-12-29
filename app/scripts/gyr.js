@@ -17,7 +17,6 @@ angular.module('gyr', ['ui.router'])
 			$scope.r_active = ''
 			$scope.yr_active = ''
 		}
-		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
 		}
