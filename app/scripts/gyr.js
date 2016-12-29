@@ -24,7 +24,7 @@ angular.module('gyr', ['ui.router'])
 //			$scope.yr_bj = ''
 		}
 		$scope.goSta = function(id) {
-			window.localStorage.id = $scope.gyr_arr[id].id;
+			window.localStorage.id = id;
 		}
 		$scope.add = function() {
 			$location.path('nav/add');
