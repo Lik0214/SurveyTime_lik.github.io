@@ -10,6 +10,9 @@ angular.module('gyr', ['ui.router'])
 		$location.path('nav');
 		$scope.go = function() {
 			$location.path('nav');
+			$scope.active = 'active'
+			$scope.r_active = ''
+			$scope.yr_active = ''
 		}
 		$scope.goOn = function(a, b) {
 			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/thanks/servey?uid=' + a + '&id=' + b

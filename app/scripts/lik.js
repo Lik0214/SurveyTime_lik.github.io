@@ -104,15 +104,14 @@ angular.module('lik', [])
 			if($scope.lik_success.lastIndexOf('false') != -1) {
 				alert('请完善调查问卷')
 			} else {
-				//				$http({
-				//					url: $rootScope.server + 'item?' + $scope.idNeed,
-				//					method: 'put',
-				//					data: $scope.likData
-				//				}).then(function() {
-				//
-				//				}, function() {})
+				$http({
+					url: $rootScope.server + 'item?' + $scope.idNeed,
+					method: 'put',
+					data: $scope.likData
+				}).then(function() {
+
+				}, function() {})
 				window.location.hash = '#!/thanks'
-//				alert('完成调查问卷')
 			}
 		}
 	}])

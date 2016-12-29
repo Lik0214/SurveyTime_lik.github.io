@@ -218,6 +218,7 @@ angular
 						$scope.gyr_arr = e.data;
 					}, function() {});
 					window.location.hash = '#!/nav'
+					window.location.reload()
 				}, function() {})
 
 			}
