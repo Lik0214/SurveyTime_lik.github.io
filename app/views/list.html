@@ -1,5 +1,9 @@
 <div>
-	<div class="list" ng-repeat="a in gyr_arr">
+    <div class="form-group" style="border-bottom: 1px solid #00A8E6;margin: 0;">
+   
+      <input class="form-control" type="text" placeholder="请输入你要查询的名字" ng-model="wcg_s" ng-change="wcg_bian(wcg_s)"/>    
+    </div>
+	<div class="list" ng-repeat="a in gyr_arrs | f:page:6">
 		<p><a ng-click="goSta($index)" ui-sref=".sta">{{a.title}}</a></p>
 		<a ng-click="goOn(a.uid,a.id)" class="btn_copy" data-toggle="modal" data-target="#myModal">
 			<span class="glyphicon glyphicon-share"></span>
@@ -9,12 +13,10 @@
 		</a>
 	</div>
 	<div style="position: relative;margin-bottom: 5rem;text-align: center;">
-		
-	
 	<nav>
     <ul class="pagination">
     <li><a href="javascript:;" ng-click="wcg_left()">&laquo;</a></li>
-    <li ng-repeat="a in wcg_arrd" ng-click="wcg_diand($index)"><a href="javascript:;" style="{{a.se}}">{{$index+1}}</a></li>
+    <li ng-repeat="a in wcg_arrd" ng-click="wcg_diand($index)"><a href="javascript:;" style="position: relative;background:none;color:#000000;"><img src="../images/xiab2.png" style="position: absolute;bottom: 35%;left:0;width:100%;display: none;{{a.se}}"><b style="position: relative;z-index: 1;">{{$index+1}}</b></a></li>
     <li><a href="javascript:;" ng-click="wcg_right()">&raquo;</a></li>
    </ul>
  </nav>
