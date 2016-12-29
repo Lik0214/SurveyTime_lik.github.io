@@ -19,17 +19,16 @@ angular.module('syj',["chart.js"]).controller("syjCtrl", ["$rootScope","$scope",
 	   	  }
 	   		//console.log($scope.syj_arr)
 	   	  	$scope.syj_arr.push({num:[],op:[]})
-	   	  	for(var j=0;j<$scope.fruit[i].opt.length;j++){
+			if($scope.fruit[i].type==1){
+	   	  		for(var j=0;j<$scope.fruit[i].opt.length;j++){
 	   	  		//判断选择多选有没有数据
-	   	  		if($scope.fruit[i].opt[j].num == 0){
-	   	  			$scope.fruit[i].opt[j].num = 1;
-	   	  			$scope.fruit[i].opt[j].op = "暂无数据";
-	   	  			//console.log($scope.fruit[i].opt[j]);
-	   	  			$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num);
-	   	  			$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op);
-	   	  		}else{
-	   	  			$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num)
-	   	  			$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op)
+		   	  		if($scope.fruit[i].opt[j].num == 0){
+		   	  			$scope.fruit[i].opt[j].num = 1;
+		   	  			$scope.fruit[i].opt[j].op = "暂无数据";
+		   	  			//console.log($scope.fruit[i].opt[j]);
+		   	  			$scope.syj_arr[i].num.push($scope.fruit[i].opt[j].num);
+		   	  			$scope.syj_arr[i].op.push($scope.fruit[i].opt[j].op);
+		   	  		}
 	   	  		}
 	   	  	}
 	   	}
