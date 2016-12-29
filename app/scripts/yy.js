@@ -86,8 +86,8 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.borrow = "两次密码输入不一致";
 					$scope.close = function() {
 						$scope.y_background = 'y_background';
-						$scope.data.password = '';
-						$scope.data.word = '';
+//						$scope.data.password = '';
+//						$scope.data.word = '';
 					}
 				} else {
 					$http({
@@ -119,7 +119,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 				$scope.borrow = "请输入正确邮箱";
 				$scope.close = function() {
 					$scope.y_background = 'y_background';
-					$scope.data.username = '';
+//					$scope.data.username = '';
 				}
 			}
 
