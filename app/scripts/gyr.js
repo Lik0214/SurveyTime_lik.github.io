@@ -1,26 +1,28 @@
-angular.module('gyr', ['ui.router', 'angular-clipboard'])
+angular.module('gyr', ['ui.router'])
 	.directive('list2', function() {
 		return {
 			restrict: 'ECMA',
 			replace: true,
 			templateUrl: 'views/list.html'
 		}
-
 	}).controller('yr', ['$rootScope', '$scope', '$location', '$http', function($rootScope, $scope, $location, $http) {
 		$scope.active = 'active'
+		$scope.yr_bj = 'yr_bj'
 		$location.path('nav');
 		$scope.go = function() {
 			$location.path('nav');
-		}
-		$scope.goOn = function(a, b) {
-			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/share/servey?uid=' + a + '&id=' + b
-
 			$scope.active = 'active'
 			$scope.r_active = ''
 			$scope.yr_active = ''
-
+			$scope.yr_bj = 'yr_bj'
 		}
-
+		$scope.goOn = function(a, b) {
+			$scope.gyr_luyou = 'http://www.surveytime.cn/1602/lik/dist/#!/thanks/servey?uid=' + a + '&id=' + b
+			$scope.active = 'active'
+			$scope.r_active = ''
+			$scope.yr_active = ''
+//			$scope.yr_bj = ''
+		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = $scope.gyr_arr[id].id;
 		}
@@ -28,12 +30,14 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			$location.path('nav/add');
 			$scope.active = ''
 			$scope.yr_active = ''
+			$scope.yr_bj = ''
 			$scope.r_active = 'r_active' 
 		}
 		$scope.mine = function() {
 			$location.path('nav/mine');
 			$scope.r_active = ''
  		    $scope.active = ''
+ 		    $scope.yr_bj = ''
  		    $scope.yr_active = 'yr_active'
 		}
 		$scope.gyr_arrs =''
@@ -42,6 +46,7 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 			url: $rootScope.server + "item?uid=" + window.localStorage.uid,
 			method: "get"
 		}).then(function(e) {
+			$scope.gyr_arr = e.data;
 			$scope.gyr_arrs = e.data;
 			console.log(e);
 		}, function() {});
@@ -141,7 +146,9 @@ angular.module('gyr', ['ui.router', 'angular-clipboard'])
 						url: $rootScope.server + "item?uid=" + window.localStorage.uid,
 						method: "get"
 					}).then(function(e) {
+						$scope.gyr_arr = e.data;
 						$scope.gyr_arrs = e.data;
+
 						console.log(e);
 					}, function() {});
 				}, function() {});
