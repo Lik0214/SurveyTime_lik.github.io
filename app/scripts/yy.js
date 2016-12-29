@@ -27,7 +27,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 		code1 = "";
 		var codeLength = 4; //验证码的长度  
 		//	     var checkCode = document.getElementById("code");   
-		var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R','S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数  
+		var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数  
 		for(var i = 0; i < codeLength; i++) { //循环操作  
 			var index = Math.floor(Math.random() * 36); //取得随机数的索引（0~35）  
 			code1 += random[index]; //根据索引取得随机数加到code上  
@@ -59,6 +59,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.borrow = "请输入正确账号!";
 					$scope.close = function() {
 						$scope.y_background = 'y_background';
+						$scope.data.username = '';
 					}
 				} else if($scope.data.password == '' || $scope.data.password == null) {
 					$scope.y_background = 'y_background1';
@@ -70,6 +71,7 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.y_background = 'y_background1';
 					$scope.borrow = "密码必须是6~14位!";
 					$scope.close = function() {
+						$scope.data.password = '';
 						$scope.y_background = 'y_background';
 					}
 				} else if($scope.data.word == '' || $scope.data.word == null) {
@@ -77,14 +79,15 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.borrow = "请再一次输入密码!";
 					$scope.close = function() {
 						$scope.y_background = 'y_background';
+						$scope.data.word = '';
 					}
 				} else if($scope.data.word != $scope.data.password) {
 					$scope.y_background = 'y_background1';
 					$scope.borrow = "两次密码输入不一致";
 					$scope.close = function() {
-						$scope.paw = '';
-						$scope.pawa = '';
 						$scope.y_background = 'y_background';
+						$scope.data.password = '';
+						$scope.data.word = '';
 					}
 				} else {
 					$http({
@@ -108,13 +111,13 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 						}
 						$scope.borrow = "用户名已存在!";
 					});
-
 				}
 			} else {
 				$scope.y_background = 'y_background1';
 				$scope.borrow = "请输入正确邮箱";
 				$scope.close = function() {
 					$scope.y_background = 'y_background';
+					$scope.data.username = '';
 				}
 			}
 
@@ -138,8 +141,10 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 	if(cookuser && cookpass) {
 		$scope.updata.username = cookuser;
 		$scope.updata.password = cookpass;
+		$scope.check = true;
 	}
 	$scope.login = function() {
+
 		if($scope.updata.username == '' || $scope.updata.username == null) {
 			createCode();
 			$scope.y_background = 'y_background1';
@@ -198,6 +203,26 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 					$scope.y_background = 'y_background';
 				}
 			});
+		}
+
+		if($('#inputCheck').prop('checked') == true) {
+			//		alert(1)
+		} else {
+			//		alert(2)
+			if($scope.updata.password) {
+				setCookie('username', $scope.updata.username, '/', -1);
+				//					$scope.updata.username = window.localStorage.username
+				setCookie('password', $scope.updata.password, '/', -1);
+				//					localStorage.clear();
+				//					sessionStorage.clear();
+				//设置Cookie
+				function setCookie(cookie_name, value, Path, timeout) {
+					var date = new Date();
+					date.setDate(date.getDate() + timeout)
+					document.cookie = cookie_name + "=" + escape(value) + ";path" + "=" + Path +
+						';expires=' + date.toGMTString()
+				}
+			}
 		}
 	}
 

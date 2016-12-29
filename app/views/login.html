@@ -11,15 +11,15 @@
 		<div class="y_nav_center_left" id="y_nav_center_left">
 			<div>
 				<span class="glyphicon glyphicon-user"></span>
-				<input type="text" placeholder="请输入邮箱" ng-model="data.username" />
+				<input type="email" placeholder="请输入邮箱" ng-model="data.username" />
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
-				<input type="password" placeholder="请输入6~14位密码" ng-model="data.password" ng-value="paw"/>
+				<input type="password" placeholder="请输入6~14位密码" ng-model="data.password" />
 			</div>
 			<div class="y_nav_mtop">
 				<span class="glyphicon glyphicon-lock"></span>
-				<input type="password" placeholder="请重新输入密码" ng-model="data.word" ng-value="pawa"/>
+				<input type="password" placeholder="请重新输入密码" ng-model="data.word" />
 			</div>
 			<span class="y_denglu">
 				<p id="y_zcan" ng-click="signin()">注册</p>
@@ -41,7 +41,7 @@
 				<div id="change">看不清，换一张</div>
 			</span>
 			<span class="y_nav_mtop_cook">
-				<input type="checkbox" ng-checked="check" ng-model="check" />
+				<input type="checkbox" ng-checked="check" id="inputCheck" ng-model="check" />
 				记住密码
 			</span>
 			<span class="y_denglu">
