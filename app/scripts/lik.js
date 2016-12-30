@@ -102,8 +102,10 @@ angular.module('lik', [])
 			}
 
 			if($scope.lik_success.lastIndexOf('false') != -1) {
-				alert('请完善调查问卷')
+//				alert('请完善调查问卷')
+				$('#likModal').attr('id','likModal')
 			} else {
+				$('#likModal').attr('id','')
 				$http({
 					url: $rootScope.server + 'item?' + $scope.idNeed,
 					method: 'put',
