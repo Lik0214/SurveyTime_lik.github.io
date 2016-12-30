@@ -2,11 +2,12 @@ angular.module('gyrmine',['ui.router'])
 	.controller('yr_mine',['$rootScope','$scope','$location','$http', function($rootScope,$scope,$location,$http){
  	$scope.go=function(){
  		$location.path('nav')
- 		
  	}
+ 	//点击添加
  	$scope.add= function(){
  		$location.path('nav/add')
  	}
+ 	//退出登录
  	$scope.exit = function(){
  		$location.path('login')
  	}
