@@ -5,7 +5,6 @@
 	box-sizing:border-box;
 	position:relative;
 	background: #303030;
-	-background:url(../images/bg3.jpg) no-repeat;
 	background-size:100% 100%;
 	color: #555;
 }
