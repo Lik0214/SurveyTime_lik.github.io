@@ -1,0 +1,9 @@
+CACHE MANIFEST
+404.jpg
+404.html
+
+NETWORK:
+*
+
+FALLBACK:
+/index/ 404.html
