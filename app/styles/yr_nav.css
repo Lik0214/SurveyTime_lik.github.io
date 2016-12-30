@@ -65,7 +65,7 @@
 	display: -webkit-box;
 	-webkit-box-orient: horizontal;	
 	background: #fff;
-	border-top: 0.025rem solid #ccc;
+	border-top: 1px solid #ccc;
 	position: fixed;
 	left: 0;
 	bottom: 0;

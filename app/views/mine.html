@@ -4,14 +4,32 @@
 			<div class="circle">
 				<img src="images/y_logo.png" />
 			</div>
-			<p href="javascipr:;" class="headName">{{username}}</p>
+			<p class="headName">{{username}}</p>
 		</div>
 	</div>
 
-	<div class="btn btn-primary box r_password" ng-click="passblock()">修改密码</div>
+	<div class="btn btn-primary box r_password" data-toggle="modal" data-target="#myModal">修改密码</div>
 	<div class="btn btn-danger box r_password"  ng-click="exit()">退出登录 </div>
+		
+	<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">温馨提示:</h4>
+		      </div>
+		      <div class="modal-body">
+		        很抱歉，暂不支持此功能，敬请期待!
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
-	<div class="y_tankuang" ng-class="y_tankuang">
+	<!--<div class="y_tankuang" ng-class="y_tankuang">
 		<em class="r_close glyphicon glyphicon-remove-circle" ng-click="yr_close()"></em>
 		<span class="y_pass">
 			<p><i>*</i>初始密码:</p>
@@ -22,5 +40,5 @@
 			<input type="password" placeholder="请重新输入新密码" ng-model="password_new2"/>
 			<div class="btn btn-primary box r_password"  ng-click="ynone()">提交</div>
 		</span>
-	</div>
+	</div>-->
 </div>
