@@ -25,7 +25,7 @@ angular
     'py',
     'syj',
     'gyrmine'
-  ]).config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+  ]).config(['$stateProvider', '$urlRouterProvider','$httpProvider',function($stateProvider, $urlRouterProvider,$httpProvider) {
 		$stateProvider.state('login', {
 			url: '/login',
 			templateUrl: 'views/login.html'
@@ -73,7 +73,22 @@ angular
 			}
 		})
 		$urlRouterProvider.when('','login')
-	}])
-  .controller('rootCtrl', ['$rootScope', function($rootScope){
+		$httpProvider.interceptors.push('Http404Interceptor');
+	}]).controller('rootCtrl', ['$rootScope', function($rootScope){
   	$rootScope.server = 'http://www.surveytime.cn:1602/'
-  }]);
+  }]).factory('Http404Interceptor', function ($q)
+    {
+        return {
+            responseError: function (response)
+            {
+                
+                if(response.status == -1){
+                  window.location.href = '404.html'
+                }
+                return $q.reject(response);
+            }
+        }
+    }).config(function ($httpProvider)
+    {
+        $httpProvider.interceptors.push('Http404Interceptor');
+    });

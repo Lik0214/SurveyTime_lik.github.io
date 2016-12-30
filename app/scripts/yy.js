@@ -205,7 +205,9 @@ angular.module('py', []).controller("pyan", ["$rootScope", "$scope", "$http", "$
 				$scope.borrow = "用户名和密码不一致 !";
 				$scope.close = function() {
 					$scope.y_background = 'y_background';
+					
 				}
+	
 			});
 		}
 
