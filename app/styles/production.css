@@ -50,10 +50,13 @@
 	left:1.4rem;
 	top:.9rem;
 }
+.lik_survey{
+	padding-bottom:3.8rem;
+}
 .lik_survey h1{
 	width:100%;
 	height:1.8rem;
-	color:#fff;
+	color:#EEDBA1;
 	line-height:1.8rem;
 	font-size:1.4rem;
 	text-align:center;
