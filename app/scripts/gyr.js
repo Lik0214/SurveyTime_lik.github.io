@@ -21,7 +21,7 @@ angular.module('gyr', ['ui.router'])
 			$scope.active = 'active'
 			$scope.r_active = ''
 			$scope.yr_active = ''
-			//$scope.yr_bj = ''
+				//$scope.yr_bj = ''
 		}
 		$scope.goSta = function(id) {
 			window.localStorage.id = id;
@@ -48,6 +48,11 @@ angular.module('gyr', ['ui.router'])
 		}).then(function(e) {
 			$scope.gyr_arr = e.data;
 			$scope.gyr_arrs = e.data;
+			if($scope.gyr_arr.length != 0) {
+				$scope.gyr_list = true
+			} else {
+				$scope.gyr_list = false
+			}
 			console.log(e);
 		}, function() {});
 		$http({
@@ -95,6 +100,11 @@ angular.module('gyr', ['ui.router'])
 				$scope.gyr_arrs = $scope.gyr_arr
 
 			}
+							if($scope.gyr_arrs.length != 0) {
+								$scope.gyr_list = true
+							} else {
+								$scope.gyr_list = false
+							}
 			window.localStorage.wcg_tmp = a
 			$scope.wcg_s = window.localStorage.wcg_tmp
 		}
@@ -156,6 +166,11 @@ angular.module('gyr', ['ui.router'])
 							method: "get"
 						}).then(function(e) {
 							$scope.gyr_arr = e.data;
+							if($scope.gyr_arr.length != 0) {
+								$scope.gyr_list = true
+							} else {
+								$scope.gyr_list = false
+							}
 						}, function() {});
 					}, function() {});
 				}, function() {});

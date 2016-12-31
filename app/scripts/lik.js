@@ -6,6 +6,7 @@ angular.module('lik', [])
 			url: $rootScope.server + 'item?' + $scope.idNeed
 		}).then(function(e) {
 			$scope.likData = e.data
+			console.log($scope.likData)
 		}, function() {})
 		$http({
 			method: 'get',
@@ -52,11 +53,21 @@ angular.module('lik', [])
 						}
 					}
 				}*/
-
 			for(var i = 0; i < $scope.likData.option.length; i++) {
 				if($scope.likData.option[i].type == 0) {
-					if($('.liktext').eq(i).val() == '') {} else {
-						$scope.likData.option[i].oop = $('.liktext').eq(i).val()
+					if($('.liktext').eq(i).val() != ''){
+						if($scope.likData.option[i].oop == ''){
+							var arrText = $scope.likData.option[i].oop.split('')
+						}else{
+							var arrText = $scope.likData.option[i].oop
+						}
+						if($.inArray($('.liktext').eq(i).val(), arrText) == -1){
+							alert('不存在')
+							arrText.push($('.liktext').eq(i).val())
+							$scope.likData.option[i].oop = arrText
+						}else{
+							alert('已存在')
+						}
 					}
 				} else if($scope.likData.option[i].type == 1) {
 					for(var j = 0; j < $scope.likData.option[i].opt.length; j++) {
@@ -71,12 +82,25 @@ angular.module('lik', [])
 						}
 					}
 				} else if($scope.likData.option[i].type == 3) {
-					if($('.likarea').eq(i).val() == '') {} else {
-						$scope.likData.option[i].oop = $('.likarea').eq(i).val()
+					if($('.likarea').eq(i).val() != '') {
+						if($scope.likData.option[i].oop == ''){
+							var arrArea = $scope.likData.option[i].oop.split('')
+						}else{
+							var arrArea = $scope.likData.option[i].oop
+						}
+						if($.inArray($('.likarea').eq(i).val().toString(), arrArea) == -1){
+							alert('不存在')
+							arrArea.push($('.likarea').eq(i).val())
+							$scope.likData.option[i].oop = arrArea
+						}else{
+							alert('已存在')
+						}
 					}
 				}
 			}
+			console.log($scope.likData)
 
+				
 			for(var i = 0; i < $scope.likData.option.length; i++) {
 				if($scope.likData.option[i].type == 1 || $scope.likData.option[i].type == 2) {
 					$scope.str1 = ''
@@ -92,14 +116,22 @@ angular.module('lik', [])
 						$scope.lik_success.push('true')
 
 					}
-				} else {
-					if($scope.likData.option[i].oop == $scope.lod_likai.option[i].oop) {
+				} else if($scope.likData.option[i].type == 0) {
+					if($('.liktext').eq(i).val() == '') {
+						$scope.lik_success.push('false')
+					} else {
+						$scope.lik_success.push('true')
+					}
+				} else if($scope.likData.option[i].type == 3) {
+					if($('.likarea').eq(i).val() == '') {
 						$scope.lik_success.push('false')
 					} else {
 						$scope.lik_success.push('true')
 					}
 				}
 			}
+				
+				console.log($scope.lik_success)
 
 			if($scope.lik_success.lastIndexOf('false') != -1) {
 //				alert('请完善调查问卷')
@@ -111,9 +143,8 @@ angular.module('lik', [])
 					method: 'put',
 					data: $scope.likData
 				}).then(function() {
-
+					window.location.hash = '#!/thanks'
 				}, function() {})
-				window.location.hash = '#!/thanks'
 			}
 		}
 	}])
