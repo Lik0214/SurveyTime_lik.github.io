@@ -62,11 +62,8 @@ angular.module('lik', [])
 							var arrText = $scope.likData.option[i].oop
 						}
 						if($.inArray($('.liktext').eq(i).val(), arrText) == -1){
-							alert('不存在')
 							arrText.push($('.liktext').eq(i).val())
 							$scope.likData.option[i].oop = arrText
-						}else{
-							alert('已存在')
 						}
 					}
 				} else if($scope.likData.option[i].type == 1) {
@@ -89,11 +86,8 @@ angular.module('lik', [])
 							var arrArea = $scope.likData.option[i].oop
 						}
 						if($.inArray($('.likarea').eq(i).val().toString(), arrArea) == -1){
-							alert('不存在')
 							arrArea.push($('.likarea').eq(i).val())
 							$scope.likData.option[i].oop = arrArea
-						}else{
-							alert('已存在')
 						}
 					}
 				}

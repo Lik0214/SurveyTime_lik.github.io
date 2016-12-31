@@ -30,8 +30,8 @@
 			<div class="panel-heading">
 				<h3 style="text-align: center; color:#444444;padding:.5rem 0; font-size: 1rem;font-weight:bold; ">{{a.title}}</h3>
 			</div>
-			<div class="panel-body" id="syj_numCon" ng-if="a.oop==''?a.oop='还没有任何回答':a.oop" style="text-align:center;">
-				<span>{{a.oop}}</span>
+			<div class="panel-body" id="syj_numCon" ng-repeat="y in a.oop" ng-if="a.oop==''?a.oop='还没有任何回答':a.oop" style="text-align:center;">
+				<span>{{y}}</span>
 			</div>
 		</div>
 		<!-- 简答 -->
@@ -39,8 +39,8 @@
 			<div class="panel-heading" >
 				<h3 style="text-align: center; color:#444444;padding:.5rem 0;font-weight:bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h3>
 			</div>
-			<div class="panel-body" style="font-size:1rem;text-align:center;">
-				<span>{{a.oop}}</span>
+			<div class="panel-body" ng-repeat="x in a.oop" style="font-size:1rem;text-align:center;">
+				<span>{{x}}</span>
 			</div>
 		</div>
 	</div>
