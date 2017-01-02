@@ -1,6 +1,6 @@
 <div ng-controller="syjCtrl" class="syjsta" style="padding:1.2rem 0 3.2rem;background: none;">
     <div class="panel-title">
-        <h1 class="panel-title" style="text-align: center; color:#444444;padding:.9rem 0; font-weight: bold; font-size: 1.5rem;">{{fruit_title.title}}</h1>
+        <h1 class="panel-title" style="text-align: center; color:#444444;padding:.9rem 0; font-weight: bold; font-size: 1.5rem;line-height:140%;">{{fruit_title.title}}</h1>
     </div>
 
     <div class="container" id="syj_heading" ng-repeat="a in fruit" style="background: none;border: none;">
@@ -9,7 +9,7 @@
         <!-- 饼统计图 -->
         <div class="panel panel-default" ng-show="1==a.type">
             <div class="panel-heading">
-                <h3 style="text-align: center; color:#444444;padding:.5rem 0; font-weight: bold; font-size: 1rem;">{{a.title}}</h3>
+                <h3 style="text-align: center; color:#444444;padding:.3rem 0; font-weight: bold; font-size: 1rem;line-height:140%;">{{a.title}}</h3>
             </div>
             <div class="panel-body">
                 <canvas id="pie" class="chart chart-pie" chart-colors=colors chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-labels="labels"></canvas>
@@ -19,29 +19,35 @@
         <!-- 条形统计图 -->
         <div class="panel panel-default" ng-show="2==a.type">
             <div class="panel-heading">
-                <h3 style="text-align: center;padding:.5rem 0; color:#444444;font-weight: bold; font-size: 1rem;">{{a.title}}</h3>
+                <h3 style="text-align: center;padding:.3rem 0; color:#444444;font-weight: bold; font-size: 1rem;line-height:140%;">{{a.title}}</h3>
             </div>
             <div class="panel-body">
                 <canvas id="bar" class="chart chart-bar" chart-colors=colors chart-data=syj_arr[$index].num chart-labels=syj_arr[$index].op chart-series="series"></canvas>
             </div>
         </div>
         <!-- 问答 -->
-        <div class="panel panel-default" ng-show="3==a.type">
+        <div class="panel panel-default" ng-show="3==a.type" style="line-height:140%;">
             <div class="panel-heading">
-                <h3 style="text-align: center; color:#444444;padding:.5rem 0; font-size: 1rem;font-weight:bold; ">{{a.title}}</h3>
+                <h3 style="text-align: center; color:#444444;padding:.3rem 0; font-size: 1rem;font-weight:bold;line-height:140%;">{{a.title}}</h3>
             </div>
-            <div class="panel-body" id="syj_numCon" ng-repeat="y in a.oop" ng-if="a.oop==''?a.oop='还没有任何回答':a.oop" style="text-align:center;">
-                <span>{{y}}</span>
-            </div>
+			<div class="panel-body" ng-if="a.oop==''" style="text-align:center;font-size:.8rem;">
+				<span>还没有任何回答</span>
+			</div>
+			<div class="panel-body" ng-repeat="y in a.oop" style="text-align:center;font-size:.7rem;line-height:140%;">
+				<span>{{y}}</span>
+			</div>
         </div>
         <!-- 简答 -->
-        <div class="panel panel-default" ng-show="0==a.type">
+        <div class="panel panel-default" ng-show="0==a.type" style="line-height:140%;">
             <div class="panel-heading">
-                <h3 style="text-align: center; color:#444444;padding:.5rem 0;font-weight:bold; font-size: 1rem;border: none;background: none;">{{a.title}}</h3>
+                <h3 style="text-align: center; color:#444444;padding:.3rem 0;font-weight:bold; font-size: 1rem;border: none;background: none;line-height:140%;">{{a.title}}</h3>
             </div>
-            <div class="panel-body" ng-repeat="x in a.oop" style="font-size:1rem;text-align:center;">
-                <span>{{x}}</span>
-            </div>
+			<div class="panel-body" ng-if="a.oop==''" style="text-align:center;font-size:.8rem;">
+				<span>还没有任何回答</span>
+			</div>
+			<div class="panel-body" ng-repeat="y in a.oop" style="text-align:center;font-size:.7rem;line-height:140%;">
+				<span>{{y}}</span>
+			</div>
         </div>
     </div>
 </div>
